@@ -11,7 +11,7 @@ namespace Iyzipay.Model
 
         public static BasicThreedsInitialize Create(CreateBasicPaymentRequest request, Options options)
         {
-            BasicThreedsInitialize response = RestHttpClient.Create().Post<BasicThreedsInitialize>(options.BaseUrl + "/payment/3dsecure/initialize/basic", GetHttpHeaders(request, options), request);
+            var response = RestHttpClient.Create().Post<BasicThreedsInitialize>(options.BaseUrl + "/payment/3dsecure/initialize/basic", GetHttpHeaders(request, options), request);
 
             if (response != null)
             {

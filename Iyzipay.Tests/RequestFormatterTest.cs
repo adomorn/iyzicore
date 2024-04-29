@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Iyzipay.Tests
 {

@@ -66,7 +66,7 @@ namespace Iyzipay
         {
             if (list != null)
             {
-                String appendedValue = "";
+                var appendedValue = "";
                 foreach (RequestStringConvertible value in list)
                 {
                     appendedValue = appendedValue + value.ToPKIRequestString() + ", ";
@@ -80,8 +80,8 @@ namespace Iyzipay
         {
             if (list != null)
             {
-                String appendedValue = "";
-                foreach (int value in list)
+                var appendedValue = "";
+                foreach (var value in list)
                 {
                     appendedValue = appendedValue + value + ", ";
                 }

@@ -1,8 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
-
-
-namespace Iyzipay.Request
+﻿namespace Iyzipay.Request
 {
     public class InitUcsRequest : BaseRequestV2
     {

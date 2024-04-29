@@ -1,8 +1,6 @@
 ﻿using Iyzipay.Model;
-using Iyzipay.Model.V2;
 using Iyzipay.Request;
 using NUnit.Framework;
-using System;
 
 namespace Iyzipay.Samples
 {

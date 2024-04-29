@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Iyzipay.Model
+﻿namespace Iyzipay.Model
 {
     public class LoyaltyPaymentCard : RequestStringConvertible
     {

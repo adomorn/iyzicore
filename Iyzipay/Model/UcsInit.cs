@@ -1,6 +1,4 @@
 ﻿using Iyzipay.Request;
-using System;
-using Newtonsoft.Json;
 
 namespace Iyzipay.Model
 {
@@ -17,8 +15,8 @@ namespace Iyzipay.Model
 
         public static UcsInit Create(InitUcsRequest request, Options options)
         {
-            string uri = options.BaseUrl + "/v2/ucs/init";
-            UcsInit response = RestHttpClientV2.Create().Post<UcsInit>(uri, GetHttpHeadersWithRequestBody(request, uri, options), request);
+            var uri = options.BaseUrl + "/v2/ucs/init";
+            var response = RestHttpClientV2.Create().Post<UcsInit>(uri, GetHttpHeadersWithRequestBody(request, uri, options), request);
             return response;
         }
     }

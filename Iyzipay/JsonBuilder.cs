@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Net.Http;
 using System.Text;
-using System;
 
 namespace Iyzipay
 {
@@ -21,21 +20,10 @@ namespace Iyzipay
             });
         }
 
-        public static string SerializeToJsonString(BaseRequestV2 request)
-        {
-            return JsonConvert.SerializeObject(request, new JsonSerializerSettings()
-            {
-                Formatting = Formatting.None,
-                NullValueHandling = NullValueHandling.Ignore,
-                DefaultValueHandling = DefaultValueHandling.Ignore,
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            });
-        }
-
         public static string SerializeObjectToPrettyJson(BaseRequestV2 value)
         {
-            StringBuilder sb = new StringBuilder(256);
-            StringWriter sw = new StringWriter(sb, CultureInfo.InvariantCulture);
+            var sb = new StringBuilder(256);
+            var sw = new StringWriter(sb, CultureInfo.InvariantCulture);
 
             var jsonSerializer = JsonSerializer.CreateDefault();
             jsonSerializer.NullValueHandling = NullValueHandling.Ignore;
@@ -43,7 +31,7 @@ namespace Iyzipay
             jsonSerializer.ContractResolver = new CamelCasePropertyNamesContractResolver();
             jsonSerializer.Formatting = Formatting.Indented;
 
-            using (JsonTextWriter jsonWriter = new JsonTextWriter(sw))
+            using (var jsonWriter = new JsonTextWriter(sw))
             {
                 jsonWriter.Formatting = Formatting.Indented;
                 jsonWriter.IndentChar = '\t';
@@ -52,7 +40,7 @@ namespace Iyzipay
                 jsonSerializer.Serialize(jsonWriter, value, typeof(BaseRequestV2));
             }
 
-            string json = sw.ToString();
+            var json = sw.ToString();
             return json.Replace("\r", "");
         }
 

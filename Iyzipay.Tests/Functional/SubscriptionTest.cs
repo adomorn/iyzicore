@@ -4,7 +4,6 @@ using Iyzipay.Model;
 using Iyzipay.Model.V2;
 using Iyzipay.Model.V2.Subscription;
 using Iyzipay.Request.V2.Subscription;
-using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace Iyzipay.Tests.Functional

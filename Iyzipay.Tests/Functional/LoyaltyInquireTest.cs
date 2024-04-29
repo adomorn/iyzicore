@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Iyzipay.Model;
+﻿using Iyzipay.Model;
 using Iyzipay.Request;
-using Iyzipay.Tests.Functional.Builder;
 using Iyzipay.Tests.Functional.Builder.Request;
 using NUnit.Framework;
 
