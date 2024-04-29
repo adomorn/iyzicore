@@ -1,10 +1,3 @@
-using Iyzipay.Model;
-using Iyzipay.Model.V2;
-using Iyzipay.Model.V2.Iyzilink;
-using Iyzipay.Request;
-using Iyzipay.Tests.Functional.Util;
-using NUnit.Framework;
-
 namespace Iyzipay.Tests.Functional
 {
     public class IyziLinkTest : BaseTest

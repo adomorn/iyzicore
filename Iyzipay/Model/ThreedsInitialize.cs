@@ -11,7 +11,7 @@ namespace Iyzipay.Model
 
         public static ThreedsInitialize Create(CreatePaymentRequest request, Options options)
         {
-            ThreedsInitialize response = RestHttpClient.Create().Post<ThreedsInitialize>(options.BaseUrl + "/payment/3dsecure/initialize", GetHttpHeaders(request, options), request);
+            var response = RestHttpClient.Create().Post<ThreedsInitialize>(options.BaseUrl + "/payment/3dsecure/initialize", GetHttpHeaders(request, options), request);
 
             if (response != null)
             {

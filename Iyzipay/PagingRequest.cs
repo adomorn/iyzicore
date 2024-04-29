@@ -1,5 +1,3 @@
-using System;
-
 namespace Iyzipay
 {
     public class PagingRequest : BaseRequestV2

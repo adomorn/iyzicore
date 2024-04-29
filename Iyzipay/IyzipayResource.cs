@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 
 namespace Iyzipay
 {
@@ -26,8 +25,8 @@ namespace Iyzipay
 
         protected static Dictionary<string, string> GetHttpHeaders(BaseRequest request, Options options)
         {
-            string randomString = DateTime.Now.ToString("ddMMyyyyhhmmssffff");
-            Dictionary<string, string> headers = new Dictionary<string, string>();
+            var randomString = DateTime.Now.ToString("ddMMyyyyhhmmssffff");
+            var headers = new Dictionary<string, string>();
 
             headers.Add("Accept", "application/json");
             headers.Add(RANDOM_HEADER_NAME, randomString);
@@ -38,7 +37,7 @@ namespace Iyzipay
 
         private static string PrepareAuthorizationString(BaseRequest request, string randomString, Options options)
         {
-            string hash = HashGenerator.GenerateHash(options.ApiKey, options.SecretKey, randomString, request);
+            var hash = HashGenerator.GenerateHash(options.ApiKey, options.SecretKey, randomString, request);
             return IYZIWS_HEADER_NAME + options.ApiKey + COLON + hash;
         }
     }

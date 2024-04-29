@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Iyzipay
 {
@@ -23,13 +22,13 @@ namespace Iyzipay
 
         public T Get<T>(String url)
         {
-            HttpResponseMessage httpResponseMessage = HttpClient.GetAsync(url).Result; 
+            var httpResponseMessage = HttpClient.GetAsync(url).Result; 
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
         
         public T Get<T>(String url, Dictionary<string,string> headers)
         {
-            HttpRequestMessage requestMessage = new HttpRequestMessage
+            var requestMessage = new HttpRequestMessage
             {
                 Method = HttpMethod.Get, 
                 RequestUri = new Uri(url)
@@ -40,13 +39,13 @@ namespace Iyzipay
                 requestMessage.Headers.Add(header.Key, header.Value);
             }
             
-            HttpResponseMessage httpResponseMessage = HttpClient.SendAsync(requestMessage).Result; 
+            var httpResponseMessage = HttpClient.SendAsync(requestMessage).Result; 
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
 
         public T Post<T>(String url, Dictionary<string,string> headers, BaseRequest request)
         { 
-            HttpRequestMessage requestMessage = new HttpRequestMessage
+            var requestMessage = new HttpRequestMessage
             {
                 Method = HttpMethod.Post, 
                 RequestUri = new Uri(url), 
@@ -58,13 +57,13 @@ namespace Iyzipay
                 requestMessage.Headers.Add(header.Key, header.Value);
             }
 
-            HttpResponseMessage httpResponseMessage = HttpClient.SendAsync(requestMessage).Result;
+            var httpResponseMessage = HttpClient.SendAsync(requestMessage).Result;
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
 
         public T Delete<T>(String url, Dictionary<string, string> headers, BaseRequest request)
         { 
-            HttpRequestMessage requestMessage = new HttpRequestMessage
+            var requestMessage = new HttpRequestMessage
             {
                 Method = HttpMethod.Delete,
                 RequestUri = new Uri(url),
@@ -76,13 +75,13 @@ namespace Iyzipay
                 requestMessage.Headers.Add(header.Key, header.Value);
             }
 
-            HttpResponseMessage httpResponseMessage = HttpClient.SendAsync(requestMessage).Result; 
+            var httpResponseMessage = HttpClient.SendAsync(requestMessage).Result; 
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
 
         public T Put<T>(String url, Dictionary<string, string> headers, BaseRequest request)
         {
-            HttpRequestMessage requestMessage = new HttpRequestMessage
+            var requestMessage = new HttpRequestMessage
             {
                 Method = HttpMethod.Put, 
                 RequestUri = new Uri(url), 
@@ -94,7 +93,7 @@ namespace Iyzipay
                 requestMessage.Headers.Add(header.Key, header.Value);
             }
 
-            HttpResponseMessage httpResponseMessage = HttpClient.SendAsync(requestMessage).Result; 
+            var httpResponseMessage = HttpClient.SendAsync(requestMessage).Result; 
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
     }

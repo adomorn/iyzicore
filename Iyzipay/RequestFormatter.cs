@@ -10,9 +10,9 @@ namespace Iyzipay
             {
                 return price + ".0";
             }
-            int subStrIndex = 0;
-            String priceReversed = StringHelper.Reverse(price);
-            for (int i = 0; i < priceReversed.Length; i++)
+            var subStrIndex = 0;
+            var priceReversed = StringHelper.Reverse(price);
+            for (var i = 0; i < priceReversed.Length; i++)
             {
                 if (priceReversed[i].Equals('0'))
                 {

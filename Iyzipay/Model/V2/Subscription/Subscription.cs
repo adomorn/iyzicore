@@ -7,55 +7,55 @@ namespace Iyzipay.Model.V2.Subscription
     {
         public static CheckoutFormResource InitializeCheckoutForm(InitializeCheckoutFormRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/checkoutform/initialize";
+            var uri = $"{options.BaseUrl}/v2/subscription/checkoutform/initialize";
             return RestHttpClientV2.Create().Post<CheckoutFormResource>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static UpdateCardFormResource UpdateCard(UpdateCardRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/card-update/checkoutform/initialize";
+            var uri = $"{options.BaseUrl}/v2/subscription/card-update/checkoutform/initialize";
             return RestHttpClientV2.Create().Post<UpdateCardFormResource>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static ResponseData<SubscriptionCreatedResource> Initialize(SubscriptionInitializeRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/initialize";
+            var uri = $"{options.BaseUrl}/v2/subscription/initialize";
             return RestHttpClientV2.Create().Post<ResponseData<SubscriptionCreatedResource>>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static IyzipayResourceV2 Activate(ActivateSubscriptionRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}/activate";
+            var uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}/activate";
             return RestHttpClientV2.Create().Post<IyzipayResourceV2>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static IyzipayResourceV2 Retry(RetrySubscriptionRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/operation/retry";
+            var uri = $"{options.BaseUrl}/v2/subscription/operation/retry";
             return RestHttpClientV2.Create().Post<IyzipayResourceV2>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static IyzipayResourceV2 Upgrade(UpgradeSubscriptionRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}/upgrade";
+            var uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}/upgrade";
             return RestHttpClientV2.Create().Post<IyzipayResourceV2>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static IyzipayResourceV2 Cancel(CancelSubscriptionRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}/cancel";
+            var uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}/cancel";
             return RestHttpClientV2.Create().Post<IyzipayResourceV2>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static ResponseData<SubscriptionResource> Retrieve(RetrieveSubscriptionRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}";
+            var uri = $"{options.BaseUrl}/v2/subscription/subscriptions/{request.SubscriptionReferenceCode}";
             return RestHttpClientV2.Create().Get<ResponseData<SubscriptionResource>>( uri, GetHttpHeadersWithUrlParams(request, uri ,options));
         }
         
         public static ResponsePagingData<SubscriptionResource> Search(SearchSubscriptionRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/subscriptions{GetQueryParams(request)}";
+            var uri = $"{options.BaseUrl}/v2/subscription/subscriptions{GetQueryParams(request)}";
             return RestHttpClientV2.Create().Get<ResponsePagingData<SubscriptionResource>>( uri, GetHttpHeadersWithUrlParams(request, uri ,options));
         }
         
@@ -64,7 +64,7 @@ namespace Iyzipay.Model.V2.Subscription
                 return "";
             }
 
-            string queryParams = "?conversationId=" + request.ConversationId;
+            var queryParams = "?conversationId=" + request.ConversationId;
 
             if (!String.IsNullOrEmpty(request.Locale)) {
                 queryParams += "&locale=" + request.Locale;

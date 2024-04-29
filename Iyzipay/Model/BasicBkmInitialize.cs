@@ -10,7 +10,7 @@ namespace Iyzipay.Model
         
         public static BasicBkmInitialize Create(CreateBasicBkmInitializeRequest request, Options options)
         {
-            BasicBkmInitialize response = RestHttpClient.Create().Post<BasicBkmInitialize>(options.BaseUrl + "/payment/bkm/initialize/basic", GetHttpHeaders(request, options), request);
+            var response = RestHttpClient.Create().Post<BasicBkmInitialize>(options.BaseUrl + "/payment/bkm/initialize/basic", GetHttpHeaders(request, options), request);
 
             if (response != null)
             {

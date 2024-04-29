@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Iyzipay.Model;
+﻿using Iyzipay.Model;
 using Iyzipay.Request;
-using Iyzipay.Tests.Functional.Util;
 
 namespace Iyzipay.Tests.Functional.Builder.Request
 {

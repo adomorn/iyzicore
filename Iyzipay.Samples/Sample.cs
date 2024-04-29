@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 ﻿using System.Diagnostics;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using NUnit.Framework;
-using System.Diagnostics;
 
 namespace Iyzipay.Samples
 {

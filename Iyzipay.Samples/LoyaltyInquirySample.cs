@@ -1,7 +1,6 @@
 ﻿using Iyzipay.Model;
 using Iyzipay.Request;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace Iyzipay.Samples
 {

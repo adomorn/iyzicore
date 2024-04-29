@@ -7,31 +7,31 @@ namespace Iyzipay.Model.V2.Subscription
     {
         public static ResponseData<ProductResource> Create(CreateProductRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/products";
+            var uri = $"{options.BaseUrl}/v2/subscription/products";
             return RestHttpClientV2.Create().Post<ResponseData<ProductResource>>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static ResponseData<ProductResource> Update(UpdateProductRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/products/{request.ProductReferenceCode}";
+            var uri = $"{options.BaseUrl}/v2/subscription/products/{request.ProductReferenceCode}";
             return RestHttpClientV2.Create().Post<ResponseData<ProductResource>>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static IyzipayResourceV2 Delete(DeleteProductRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/products/{request.ProductReferenceCode}";
+            var uri = $"{options.BaseUrl}/v2/subscription/products/{request.ProductReferenceCode}";
             return RestHttpClientV2.Create().Delete<IyzipayResourceV2>( uri, GetHttpHeadersWithRequestBody(request, uri ,options), request);
         }
         
         public static ResponseData<ProductResource> Retrieve(RetrieveProductRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/products/{request.ProductReferenceCode}";
+            var uri = $"{options.BaseUrl}/v2/subscription/products/{request.ProductReferenceCode}";
             return RestHttpClientV2.Create().Get<ResponseData<ProductResource>>( uri, GetHttpHeadersWithUrlParams(request, uri ,options));
         }
         
         public static ResponsePagingData<ProductResource> RetrieveAll(PagingRequest request, Options options)
         {
-            string uri = $"{options.BaseUrl}/v2/subscription/products{GetQueryParams(request)}";
+            var uri = $"{options.BaseUrl}/v2/subscription/products{GetQueryParams(request)}";
             return RestHttpClientV2.Create().Get<ResponsePagingData<ProductResource>>( uri, GetHttpHeadersWithUrlParams(request, uri ,options));
         }
         
@@ -41,7 +41,7 @@ namespace Iyzipay.Model.V2.Subscription
                 return "";
             }
 
-            string queryParams = "?conversationId=" + request.ConversationId;
+            var queryParams = "?conversationId=" + request.ConversationId;
 
             if (!String.IsNullOrEmpty(request.Locale)) {
                 queryParams += "&locale=" + request.Locale;
