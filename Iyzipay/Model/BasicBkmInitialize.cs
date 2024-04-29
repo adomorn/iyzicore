@@ -10,7 +10,7 @@ public class BasicBkmInitialize : IyzipayResource
     public static BasicBkmInitialize Create(CreateBasicBkmInitializeRequest request, Options options)
     {
         var response = RestHttpClient.Create()
-            .Post<BasicBkmInitialize>(options.BaseUrl + "/payment/bkm/initialize/basic",
+            .Post<BasicBkmInitialize>($"{options.BaseUrl}/payment/bkm/initialize/basic",
                 GetHttpHeaders(request, options), request);
 
         if (response != null) response.HtmlContent = DigestHelper.DecodeString(response.HtmlContent);

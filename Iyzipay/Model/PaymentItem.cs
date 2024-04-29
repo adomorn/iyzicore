@@ -27,6 +27,6 @@ public class PaymentItem : IyzipayResource
     public static PaymentItem Update(UpdatePaymentItemRequest request, Options options)
     {
         return RestHttpClient.Create()
-            .Put<PaymentItem>(options.BaseUrl + "/payment/item", GetHttpHeaders(request, options), request);
+            .Put<PaymentItem>($"{options.BaseUrl}/payment/item", GetHttpHeaders(request, options), request);
     }
 }

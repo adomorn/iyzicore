@@ -12,7 +12,7 @@ public class LoyaltyInquiry : IyzipayResource
 
     public static LoyaltyInquiry Create(LoyaltyInquiryRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<LoyaltyInquiry>(options.BaseUrl + "/payment/loyalty/inquire",
+        return RestHttpClient.Create().Post<LoyaltyInquiry>($"{options.BaseUrl}/payment/loyalty/inquire",
             GetHttpHeaders(request, options), request);
     }
 }

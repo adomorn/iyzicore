@@ -11,7 +11,7 @@ public class CardManagementPageInitialize : IyzipayResource
     public static CardManagementPageInitialize Create(CreateCardManagementPageInitializeRequest request,
         Options options)
     {
-        return RestHttpClient.Create().Post<CardManagementPageInitialize>(options.BaseUrl + "/v1/card-management/pages",
+        return RestHttpClient.Create().Post<CardManagementPageInitialize>($"{options.BaseUrl}/v1/card-management/pages",
             GetHttpHeaders(request, options), request);
     }
 }

@@ -15,12 +15,12 @@ public class Refund : IyzipayResource
     public static Refund Create(CreateRefundRequest request, Options options)
     {
         return RestHttpClient.Create()
-            .Post<Refund>(options.BaseUrl + "/payment/refund", GetHttpHeaders(request, options), request);
+            .Post<Refund>($"{options.BaseUrl}/payment/refund", GetHttpHeaders(request, options), request);
     }
 
     public static Refund CreateAmountBasedRefundRequest(CreateAmountBasedRefundRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<Refund>(options.BaseUrl + "/v2/payment/refund",
+        return RestHttpClient.Create().Post<Refund>($"{options.BaseUrl}/v2/payment/refund",
             GetHttpHeaders(request, options), request);
     }
 }

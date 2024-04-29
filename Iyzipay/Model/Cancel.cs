@@ -14,6 +14,6 @@ public class Cancel : IyzipayResource
     public static Cancel Create(CreateCancelRequest request, Options options)
     {
         return RestHttpClient.Create()
-            .Post<Cancel>(options.BaseUrl + "/payment/cancel", GetHttpHeaders(request, options), request);
+            .Post<Cancel>($"{options.BaseUrl}/payment/cancel", GetHttpHeaders(request, options), request);
     }
 }

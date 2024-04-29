@@ -11,7 +11,7 @@ public class BouncedBankTransferList : IyzipayResource
 
     public static BouncedBankTransferList Retrieve(RetrieveTransactionsRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<BouncedBankTransferList>(options.BaseUrl + "/reporting/settlement/bounced",
+        return RestHttpClient.Create().Post<BouncedBankTransferList>($"{options.BaseUrl}/reporting/settlement/bounced",
             GetHttpHeaders(request, options), request);
     }
 }

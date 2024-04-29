@@ -13,6 +13,6 @@ public class RefundChargedFromMerchant : IyzipayResource
     public static RefundChargedFromMerchant Create(CreateRefundRequest request, Options options)
     {
         return RestHttpClient.Create().Post<RefundChargedFromMerchant>(
-            options.BaseUrl + "/payment/iyzipos/refund/merchant/charge", GetHttpHeaders(request, options), request);
+            $"{options.BaseUrl}/payment/iyzipos/refund/merchant/charge", GetHttpHeaders(request, options), request);
     }
 }

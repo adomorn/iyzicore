@@ -4,7 +4,7 @@ public class RequestFormatter
 {
     public static string FormatPrice(string price)
     {
-        if (!price.Contains(".")) return price + ".0";
+        if (!price.Contains(".")) return $"{price}.0";
         var subStrIndex = 0;
         var priceReversed = StringHelper.Reverse(price);
         for (var i = 0; i < priceReversed.Length; i++)
@@ -14,7 +14,7 @@ public class RequestFormatter
             }
             else if (priceReversed[i].Equals('.'))
             {
-                priceReversed = "0" + priceReversed;
+                priceReversed = $"0{priceReversed}";
                 break;
             }
             else

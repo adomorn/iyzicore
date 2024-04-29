@@ -20,12 +20,12 @@ public class Card : IyzipayResource
     public static Card Create(CreateCardRequest request, Options options)
     {
         return RestHttpClient.Create()
-            .Post<Card>(options.BaseUrl + "/cardstorage/card", GetHttpHeaders(request, options), request);
+            .Post<Card>($"{options.BaseUrl}/cardstorage/card", GetHttpHeaders(request, options), request);
     }
 
     public static Card Delete(DeleteCardRequest request, Options options)
     {
         return RestHttpClient.Create()
-            .Delete<Card>(options.BaseUrl + "/cardstorage/card", GetHttpHeaders(request, options), request);
+            .Delete<Card>($"{options.BaseUrl}/cardstorage/card", GetHttpHeaders(request, options), request);
     }
 }

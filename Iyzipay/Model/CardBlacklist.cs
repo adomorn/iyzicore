@@ -11,19 +11,19 @@ public class CardBlacklist : IyzipayResource
 
     public static CardBlacklist Create(CreateCardBlacklistRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<CardBlacklist>(options.BaseUrl + "/cardstorage/blacklist/card",
+        return RestHttpClient.Create().Post<CardBlacklist>($"{options.BaseUrl}/cardstorage/blacklist/card",
             GetHttpHeaders(request, options), request);
     }
 
     public static CardBlacklist Update(UpdateCardBlacklistRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<CardBlacklist>(options.BaseUrl + "/cardstorage/blacklist/card/inactive",
+        return RestHttpClient.Create().Post<CardBlacklist>($"{options.BaseUrl}/cardstorage/blacklist/card/inactive",
             GetHttpHeaders(request, options), request);
     }
 
     public static CardBlacklist Retrieve(RetrieveCardBlacklistRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<CardBlacklist>(options.BaseUrl + "/cardstorage/blacklist/card/retrieve",
+        return RestHttpClient.Create().Post<CardBlacklist>($"{options.BaseUrl}/cardstorage/blacklist/card/retrieve",
             GetHttpHeaders(request, options), request);
     }
 }

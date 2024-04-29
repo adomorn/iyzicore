@@ -9,7 +9,7 @@ public class InstallmentInfo : IyzipayResource
 
     public static InstallmentInfo Retrieve(RetrieveInstallmentInfoRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<InstallmentInfo>(options.BaseUrl + "/payment/iyzipos/installment",
+        return RestHttpClient.Create().Post<InstallmentInfo>($"{options.BaseUrl}/payment/iyzipos/installment",
             GetHttpHeaders(request, options), request);
     }
 }

@@ -15,7 +15,7 @@ public class IyziLink : IyzipayResourceV2
 
     public static ResponseData<IyziLinkSave> Update(string token, IyziLinkSaveRequest request, Options options)
     {
-        var uri = options.BaseUrl + V2_IYZILINK_PRODUCTS + "/" + token + GetQueryParams(request);
+        var uri = $"{options.BaseUrl}{V2_IYZILINK_PRODUCTS}/{token}{GetQueryParams(request)}";
         return RestHttpClientV2.Create()
             .Put<ResponseData<IyziLinkSave>>(uri, GetHttpHeadersWithRequestBody(request, uri, options), request);
     }
@@ -26,8 +26,8 @@ public class IyziLink : IyzipayResourceV2
         var iyzilinkQueryParam = "productType=IYZILINK";
 
         queryParams = string.IsNullOrEmpty(queryParams)
-            ? "?" + iyzilinkQueryParam
-            : queryParams + "&" + iyzilinkQueryParam;
+            ? $"?{iyzilinkQueryParam}"
+            : $"{queryParams}&{iyzilinkQueryParam}";
 
         var uri = options.BaseUrl + V2_IYZILINK_PRODUCTS + queryParams;
         return RestHttpClientV2.Create()
@@ -36,14 +36,14 @@ public class IyziLink : IyzipayResourceV2
 
     public static ResponseData<IyziLinkItem> Retrieve(string token, BaseRequestV2 request, Options options)
     {
-        var uri = options.BaseUrl + V2_IYZILINK_PRODUCTS + "/" + token + GetQueryParams(request);
+        var uri = $"{options.BaseUrl}{V2_IYZILINK_PRODUCTS}/{token}{GetQueryParams(request)}";
         return RestHttpClientV2.Create()
             .Get<ResponseData<IyziLinkItem>>(uri, GetHttpHeadersWithUrlParams(request, uri, options));
     }
 
     public static IyzipayResourceV2 Delete(string token, BaseRequestV2 request, Options options)
     {
-        var uri = options.BaseUrl + V2_IYZILINK_PRODUCTS + "/" + token + GetQueryParams(request);
+        var uri = $"{options.BaseUrl}{V2_IYZILINK_PRODUCTS}/{token}{GetQueryParams(request)}";
         return RestHttpClientV2.Create()
             .Delete<IyzipayResourceV2>(uri, GetHttpHeadersWithRequestBody(request, uri, options), request);
     }
@@ -52,15 +52,15 @@ public class IyziLink : IyzipayResourceV2
     {
         if (request == null) return "";
 
-        var queryParams = "?conversationId=" + request.ConversationId;
+        var queryParams = $"?conversationId={request.ConversationId}";
 
-        if (!string.IsNullOrEmpty(request.Locale)) queryParams += "&locale=" + request.Locale;
+        if (!string.IsNullOrEmpty(request.Locale)) queryParams += $"&locale={request.Locale}";
 
         if (!(request is PagingRequest pagingRequest)) return queryParams;
 
-        if (pagingRequest.Page != null) queryParams += "&page=" + pagingRequest.Page;
+        if (pagingRequest.Page != null) queryParams += $"&page={pagingRequest.Page}";
 
-        if (pagingRequest.Count != null) queryParams += "&count=" + pagingRequest.Count;
+        if (pagingRequest.Count != null) queryParams += $"&count={pagingRequest.Count}";
         return queryParams;
     }
 }

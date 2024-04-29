@@ -73,32 +73,32 @@ public class Subscription : IyzipayResourceV2
     {
         if (request == null) return "";
 
-        var queryParams = "?conversationId=" + request.ConversationId;
+        var queryParams = $"?conversationId={request.ConversationId}";
 
-        if (!string.IsNullOrEmpty(request.Locale)) queryParams += "&locale=" + request.Locale;
+        if (!string.IsNullOrEmpty(request.Locale)) queryParams += $"&locale={request.Locale}";
 
         if (!string.IsNullOrEmpty(request.PricingPlanReferenceCode))
-            queryParams += "&pricingPlanReferenceCode=" + request.PricingPlanReferenceCode;
+            queryParams += $"&pricingPlanReferenceCode={request.PricingPlanReferenceCode}";
 
         if (!string.IsNullOrEmpty(request.SubscriptionReferenceCode))
-            queryParams += "&subscriptionReferenceCode=" + request.SubscriptionReferenceCode;
+            queryParams += $"&subscriptionReferenceCode={request.SubscriptionReferenceCode}";
 
         if (!string.IsNullOrEmpty(request.ParentReferenceCode))
-            queryParams += "&parentReferenceCode=" + request.ParentReferenceCode;
+            queryParams += $"&parentReferenceCode={request.ParentReferenceCode}";
 
         if (!string.IsNullOrEmpty(request.CustomerReferenceCode))
-            queryParams += "&customerReferenceCode=" + request.CustomerReferenceCode;
+            queryParams += $"&customerReferenceCode={request.CustomerReferenceCode}";
 
         if (!string.IsNullOrEmpty(request.SubscriptionStatus))
-            queryParams += "&subscriptionStatus=" + request.SubscriptionStatus;
+            queryParams += $"&subscriptionStatus={request.SubscriptionStatus}";
 
-        if (!string.IsNullOrEmpty(request.StartDate)) queryParams += "&startDate=" + request.StartDate;
+        if (!string.IsNullOrEmpty(request.StartDate)) queryParams += $"&startDate={request.StartDate}";
 
-        if (!string.IsNullOrEmpty(request.EndDate)) queryParams += "&endDate=" + request.EndDate;
+        if (!string.IsNullOrEmpty(request.EndDate)) queryParams += $"&endDate={request.EndDate}";
 
-        if (request.Page != null) queryParams += "&page=" + request.Page;
+        if (request.Page != null) queryParams += $"&page={request.Page}";
 
-        if (request.Count != null) queryParams += "&count=" + request.Count;
+        if (request.Count != null) queryParams += $"&count={request.Count}";
         return queryParams;
     }
 }

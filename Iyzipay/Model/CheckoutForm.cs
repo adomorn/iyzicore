@@ -10,7 +10,7 @@ public class CheckoutForm : PaymentResource
     public static CheckoutForm Retrieve(RetrieveCheckoutFormRequest request, Options options)
     {
         return RestHttpClient.Create()
-            .Post<CheckoutForm>(options.BaseUrl + "/payment/iyzipos/checkoutform/auth/ecom/detail",
+            .Post<CheckoutForm>($"{options.BaseUrl}/payment/iyzipos/checkoutform/auth/ecom/detail",
                 GetHttpHeaders(request, options), request);
     }
 }

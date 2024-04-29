@@ -28,7 +28,7 @@ public class ToStringRequestBuilder
             superRequestString = superRequestString.Substring(1);
             superRequestString = superRequestString.Substring(0, superRequestString.Length - 1);
 
-            if (superRequestString.Length > 0) _requestString = _requestString + superRequestString + ",";
+            if (superRequestString.Length > 0) _requestString = $"{_requestString}{superRequestString},";
         }
 
         return this;
@@ -59,7 +59,7 @@ public class ToStringRequestBuilder
         {
             var appendedValue = "";
             foreach (RequestStringConvertible value in list)
-                appendedValue = appendedValue + value.ToPKIRequestString() + ", ";
+                appendedValue = $"{appendedValue}{value.ToPKIRequestString()}, ";
             AppendKeyValueArray(key, appendedValue);
         }
 
@@ -71,7 +71,7 @@ public class ToStringRequestBuilder
         if (list != null)
         {
             var appendedValue = "";
-            foreach (var value in list) appendedValue = appendedValue + value + ", ";
+            foreach (var value in list) appendedValue = $"{appendedValue}{value}, ";
             AppendKeyValueArray(key, appendedValue);
         }
 
@@ -80,7 +80,7 @@ public class ToStringRequestBuilder
 
     private ToStringRequestBuilder AppendKeyValue(string key, string value)
     {
-        if (value != null) _requestString = _requestString + key + "=" + value + ",";
+        if (value != null) _requestString = $"{_requestString}{key}={value},";
         return this;
     }
 
@@ -89,7 +89,7 @@ public class ToStringRequestBuilder
         if (value != null)
         {
             value = value.Substring(0, value.Length - 2);
-            _requestString = _requestString + key + "=[" + value + "],";
+            _requestString = $"{_requestString}{key}=[{value}],";
         }
 
         return this;
@@ -97,7 +97,7 @@ public class ToStringRequestBuilder
 
     private ToStringRequestBuilder AppendPrefix()
     {
-        _requestString = "[" + _requestString + "]";
+        _requestString = $"[{_requestString}]";
         return this;
     }
 

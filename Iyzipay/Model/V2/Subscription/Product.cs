@@ -44,15 +44,15 @@ public class Product : IyzipayResourceV2
     {
         if (request == null) return "";
 
-        var queryParams = "?conversationId=" + request.ConversationId;
+        var queryParams = $"?conversationId={request.ConversationId}";
 
-        if (!string.IsNullOrEmpty(request.Locale)) queryParams += "&locale=" + request.Locale;
+        if (!string.IsNullOrEmpty(request.Locale)) queryParams += $"&locale={request.Locale}";
 
         if (!(request is PagingRequest pagingRequest)) return queryParams;
 
-        if (pagingRequest.Page != null) queryParams += "&page=" + pagingRequest.Page;
+        if (pagingRequest.Page != null) queryParams += $"&page={pagingRequest.Page}";
 
-        if (pagingRequest.Count != null) queryParams += "&count=" + pagingRequest.Count;
+        if (pagingRequest.Count != null) queryParams += $"&count={pagingRequest.Count}";
         return queryParams;
     }
 }

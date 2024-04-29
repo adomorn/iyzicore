@@ -11,7 +11,7 @@ public class ThreedsInitializePreAuth : IyzipayResource
     public static ThreedsInitializePreAuth Create(CreatePaymentRequest request, Options options)
     {
         var response = RestHttpClient.Create().Post<ThreedsInitializePreAuth>(
-            options.BaseUrl + "/payment/3dsecure/initialize/preauth", GetHttpHeaders(request, options), request);
+            $"{options.BaseUrl}/payment/3dsecure/initialize/preauth", GetHttpHeaders(request, options), request);
 
         if (response != null) response.HtmlContent = DigestHelper.DecodeString(response.HtmlContent);
         return response;

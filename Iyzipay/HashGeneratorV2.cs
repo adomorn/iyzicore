@@ -15,7 +15,7 @@ public class HashGeneratorV2
         HashAlgorithm algorithm = new HMACSHA256(Encoding.UTF8.GetBytes(secretKey));
         var computedHash = algorithm.ComputeHash(Encoding.UTF8.GetBytes(dataToEncrypt));
         var computedHashAsHex = BitConverter.ToString(computedHash).Replace("-", "").ToLower();
-        var authorizationString = "apiKey:" + apiKey + "&randomKey:" + randomString + "&signature:" + computedHashAsHex;
+        var authorizationString = $"apiKey:{apiKey}&randomKey:{randomString}&signature:{computedHashAsHex}";
         return Convert.ToBase64String(Encoding.UTF8.GetBytes(authorizationString));
     }
 }

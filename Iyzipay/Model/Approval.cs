@@ -8,7 +8,7 @@ public class Approval : IyzipayResource
 
     public static Approval Create(CreateApprovalRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<Approval>(options.BaseUrl + "/payment/iyzipos/item/approve",
+        return RestHttpClient.Create().Post<Approval>($"{options.BaseUrl}/payment/iyzipos/item/approve",
             GetHttpHeaders(request, options), request);
     }
 }

@@ -10,7 +10,7 @@ public class ThreedsInitialize : IyzipayResource
 
     public static ThreedsInitialize Create(CreatePaymentRequest request, Options options)
     {
-        var response = RestHttpClient.Create().Post<ThreedsInitialize>(options.BaseUrl + "/payment/3dsecure/initialize",
+        var response = RestHttpClient.Create().Post<ThreedsInitialize>($"{options.BaseUrl}/payment/3dsecure/initialize",
             GetHttpHeaders(request, options), request);
 
         if (response != null) response.HtmlContent = DigestHelper.DecodeString(response.HtmlContent);

@@ -15,7 +15,7 @@ public class UcsInit : IyzipayResourceV2
 
     public static UcsInit Create(InitUcsRequest request, Options options)
     {
-        var uri = options.BaseUrl + "/v2/ucs/init";
+        var uri = $"{options.BaseUrl}/v2/ucs/init";
         var response = RestHttpClientV2.Create()
             .Post<UcsInit>(uri, GetHttpHeadersWithRequestBody(request, uri, options), request);
         return response;

@@ -11,7 +11,7 @@ public class BasicThreedsInitialize : IyzipayResource
     public static BasicThreedsInitialize Create(CreateBasicPaymentRequest request, Options options)
     {
         var response = RestHttpClient.Create().Post<BasicThreedsInitialize>(
-            options.BaseUrl + "/payment/3dsecure/initialize/basic", GetHttpHeaders(request, options), request);
+            $"{options.BaseUrl}/payment/3dsecure/initialize/basic", GetHttpHeaders(request, options), request);
 
         if (response != null) response.HtmlContent = DigestHelper.DecodeString(response.HtmlContent);
         return response;

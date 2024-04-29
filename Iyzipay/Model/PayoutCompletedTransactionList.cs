@@ -10,6 +10,6 @@ public class PayoutCompletedTransactionList : IyzipayResource
     public static PayoutCompletedTransactionList Retrieve(RetrieveTransactionsRequest request, Options options)
     {
         return RestHttpClient.Create().Post<PayoutCompletedTransactionList>(
-            options.BaseUrl + "/reporting/settlement/payoutcompleted", GetHttpHeaders(request, options), request);
+            $"{options.BaseUrl}/reporting/settlement/payoutcompleted", GetHttpHeaders(request, options), request);
     }
 }

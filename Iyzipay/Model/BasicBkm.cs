@@ -10,7 +10,7 @@ public class BasicBkm : BasicPaymentResource
 
     public static BasicBkm Retrieve(RetrieveBkmRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<BasicBkm>(options.BaseUrl + "/payment/bkm/auth/detail/basic",
+        return RestHttpClient.Create().Post<BasicBkm>($"{options.BaseUrl}/payment/bkm/auth/detail/basic",
             GetHttpHeaders(request, options), request);
     }
 }

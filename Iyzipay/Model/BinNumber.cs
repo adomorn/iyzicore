@@ -17,7 +17,7 @@ public class BinNumber : IyzipayResource
 
     public static BinNumber Retrieve(RetrieveBinNumberRequest request, Options options)
     {
-        return RestHttpClient.Create().Post<BinNumber>(options.BaseUrl + "/payment/bin/check",
+        return RestHttpClient.Create().Post<BinNumber>($"{options.BaseUrl}/payment/bin/check",
             GetHttpHeaders(request, options), request);
     }
 }
