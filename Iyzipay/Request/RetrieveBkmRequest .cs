@@ -1,17 +1,14 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class RetrieveBkmRequest : BaseRequest
 {
-    public class RetrieveBkmRequest : BaseRequest
-    {
-        public string Token { set; get; }
+    public string Token { set; get; }
 
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("token", Token)
-                .GetRequestString();
-        }
+    public override string ToPKIRequestString()
+    {
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("token", Token)
+            .GetRequestString();
     }
 }

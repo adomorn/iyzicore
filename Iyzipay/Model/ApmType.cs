@@ -1,10 +1,9 @@
-﻿namespace Iyzicore.Model
+﻿namespace Iyzicore.Model;
+
+public enum ApmType
 {
-    public enum ApmType
-    {
-        SOFORT,
-        IDEAL,
-        QIWI,
-        GIROPAY
-    }
+    SOFORT,
+    IDEAL,
+    QIWI,
+    GIROPAY
 }

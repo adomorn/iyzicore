@@ -1,47 +1,44 @@
-﻿using System;
-using Iyzicore.Model;
-using Iyzicore.Request;
+﻿using Iyzicore.Model;
 using Iyzipay.Tests.Functional.Builder.Request;
 using NUnit.Framework;
 
-namespace Iyzipay.Tests.Functional
+namespace Iyzipay.Tests.Functional;
+
+public class DisapproveTest : BaseTest
 {
-    public class DisapproveTest : BaseTest
+    [Test]
+    public void Should_Disapprove_Payment()
     {
-        [Test]
-        public void Should_Disapprove_Payment()
-        {
-            CreateSubMerchantRequest request = CreateSubMerchantRequestBuilder.Create()
-                .PersonalSubMerchantRequest()
-                .Build();
+        var request = CreateSubMerchantRequestBuilder.Create()
+            .PersonalSubMerchantRequest()
+            .Build();
 
-            SubMerchant subMerchant = SubMerchant.Create(request, _options);
+        var subMerchant = SubMerchant.Create(request, _options);
 
-            CreatePaymentRequest paymentRequest = CreatePaymentRequestBuilder.Create()
-                .MarketplacePayment(subMerchant.SubMerchantKey)
-                .Build();
+        var paymentRequest = CreatePaymentRequestBuilder.Create()
+            .MarketplacePayment(subMerchant.SubMerchantKey)
+            .Build();
 
-            Payment payment = Payment.Create(paymentRequest, _options);
+        var payment = Payment.Create(paymentRequest, _options);
 
-            string paymentTransactionId = payment.PaymentItems[0].PaymentTransactionId;
+        var paymentTransactionId = payment.PaymentItems[0].PaymentTransactionId;
 
-            CreateApprovalRequest approvalRequest = CreateApprovalRequestBuilder.Create()
-                .PaymentTransactionId(paymentTransactionId)
-                .Build();
+        var approvalRequest = CreateApprovalRequestBuilder.Create()
+            .PaymentTransactionId(paymentTransactionId)
+            .Build();
 
-            Approval.Create(approvalRequest, _options);
+        Approval.Create(approvalRequest, _options);
 
-            Disapproval disapproval = Disapproval.Create(approvalRequest, _options);
+        var disapproval = Disapproval.Create(approvalRequest, _options);
 
-            PrintResponse(disapproval);
+        PrintResponse(disapproval);
 
-            Assert.AreEqual(paymentTransactionId, disapproval.PaymentTransactionId);
-            Assert.AreEqual(Status.SUCCESS.ToString(), disapproval.Status);
-            Assert.AreEqual(Locale.TR.ToString(), disapproval.Locale);
-            Assert.NotNull(disapproval.SystemTime);
-            Assert.Null(disapproval.ErrorCode);
-            Assert.Null(disapproval.ErrorMessage);
-            Assert.Null(disapproval.ErrorGroup);
-        }
+        Assert.AreEqual(paymentTransactionId, disapproval.PaymentTransactionId);
+        Assert.AreEqual(Status.SUCCESS.ToString(), disapproval.Status);
+        Assert.AreEqual(Locale.TR.ToString(), disapproval.Locale);
+        Assert.NotNull(disapproval.SystemTime);
+        Assert.Null(disapproval.ErrorCode);
+        Assert.Null(disapproval.ErrorMessage);
+        Assert.Null(disapproval.ErrorGroup);
     }
 }

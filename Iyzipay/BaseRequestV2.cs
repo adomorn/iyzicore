@@ -1,10 +1,7 @@
-﻿using System;
+﻿namespace Iyzicore;
 
-namespace Iyzicore
+public class BaseRequestV2
 {
-    public class BaseRequestV2
-    {
-        public string Locale { get; set; }
-        public string ConversationId { get; set; }
-    }
+    public string Locale { get; set; }
+    public string ConversationId { get; set; }
 }

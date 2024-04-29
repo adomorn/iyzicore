@@ -1,9 +1,8 @@
-namespace Iyzicore.Model.V2.Iyzilink
+namespace Iyzicore.Model.V2.Iyzilink;
+
+public class IyziLinkSave
 {
-    public class IyziLinkSave
-    {
-        public string Token { get; set; }
-        public string Url { get; set; }
-        public string ImageUrl { get; set; }
-    }
+    public string Token { get; set; }
+    public string Url { get; set; }
+    public string ImageUrl { get; set; }
 }

@@ -1,12 +1,12 @@
 ﻿using Iyzicore.Request;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class CrossBookingFromSubMerchant : IyzipayResource
 {
-    public class CrossBookingFromSubMerchant : IyzipayResource
+    public static CrossBookingFromSubMerchant Create(CreateCrossBookingRequest request, Options options)
     {
-        public static CrossBookingFromSubMerchant Create(CreateCrossBookingRequest request, Options options)
-        {
-            return RestHttpClient.Create().Post<CrossBookingFromSubMerchant>(options.BaseUrl + "/crossbooking/receive", GetHttpHeaders(request, options), request);
-        }
+        return RestHttpClient.Create().Post<CrossBookingFromSubMerchant>(options.BaseUrl + "/crossbooking/receive",
+            GetHttpHeaders(request, options), request);
     }
 }

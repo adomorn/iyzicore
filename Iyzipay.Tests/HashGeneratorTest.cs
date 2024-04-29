@@ -1,25 +1,24 @@
 ﻿using Iyzicore;
 using NUnit.Framework;
 
-namespace Iyzipay.Tests
+namespace Iyzipay.Tests;
+
+public class HashGeneratorTest
 {
-    public class HashGeneratorTest
+    [Test]
+    public void Should_Generate_Hash()
     {
-        [Test]
-        public void Should_Generate_Hash()
-        {
-            string expectedHash = "Cy84UuLZpfGhI7oaPD0Ckx1M0mo=";
-            string generatedHash = HashGenerator.GenerateHash("apiKey", "secretKey", "random", new TestRequest());
+        var expectedHash = "Cy84UuLZpfGhI7oaPD0Ckx1M0mo=";
+        var generatedHash = HashGenerator.GenerateHash("apiKey", "secretKey", "random", new TestRequest());
 
-            Assert.AreEqual(expectedHash, generatedHash);
-        }
+        Assert.AreEqual(expectedHash, generatedHash);
     }
+}
 
-    public class TestRequest : BaseRequest
+public class TestRequest : BaseRequest
+{
+    public override string ToPKIRequestString()
     {
-        public override string ToPKIRequestString()
-        {
-            return "[data=value]";
-        }
+        return "[data=value]";
     }
 }

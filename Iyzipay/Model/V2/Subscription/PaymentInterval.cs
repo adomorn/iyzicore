@@ -1,10 +1,9 @@
-namespace Iyzicore.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription;
+
+public enum PaymentInterval
 {
-    public enum PaymentInterval
-    {
-        DAILY,
-        WEEKLY,
-        MONTHLY,
-        YEARLY
-    }
+    DAILY,
+    WEEKLY,
+    MONTHLY,
+    YEARLY
 }

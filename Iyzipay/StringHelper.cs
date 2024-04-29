@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace Iyzicore
+namespace Iyzicore;
+
+internal class StringHelper
 {
-    class StringHelper
+    public static string Reverse(string s)
     {
-        public static string Reverse(string s)
-        {
-            var charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-        }
+        var charArray = s.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
     }
 }

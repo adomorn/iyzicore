@@ -1,22 +1,18 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class CreateAmountBasedRefundRequest : BaseRequest
 {
+    public string PaymentId { get; set; }
+    public string Price { get; set; }
+    public string Ip { get; set; }
 
-    public class CreateAmountBasedRefundRequest : BaseRequest
+    public override string ToPKIRequestString()
     {
-        public string PaymentId { get; set; }
-        public string Price { get; set; }
-        public string Ip { get; set; }
-
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("paymentId", PaymentId)
-                .AppendPrice("price", Price)
-                .Append("ip", Ip)
-                .GetRequestString();
-        }
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("paymentId", PaymentId)
+            .AppendPrice("price", Price)
+            .Append("ip", Ip)
+            .GetRequestString();
     }
 }

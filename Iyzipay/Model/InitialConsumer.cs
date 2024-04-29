@@ -1,25 +1,23 @@
-using System;
 using System.Collections.Generic;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class InitialConsumer
 {
-    public class InitialConsumer
+    public string Name { get; set; }
+    public string Surname { get; set; }
+    public string Email { get; set; }
+    public string GsmNumber { get; set; }
+    public List<IyziupAddress> AddressList { get; set; }
+
+    public string ToPKIRequestString()
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string GsmNumber { get; set; }
-        public List<IyziupAddress> AddressList { get; set; }
-        
-        public string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .Append("name", Name)
-                .Append("surname", Surname)
-                .Append("email", Email)
-                .Append("gsmNumber", GsmNumber)
-                .Append("addressList", AddressList)
-                .GetRequestString();
-        }
+        return ToStringRequestBuilder.NewInstance()
+            .Append("name", Name)
+            .Append("surname", Surname)
+            .Append("email", Email)
+            .Append("gsmNumber", GsmNumber)
+            .Append("addressList", AddressList)
+            .GetRequestString();
     }
 }

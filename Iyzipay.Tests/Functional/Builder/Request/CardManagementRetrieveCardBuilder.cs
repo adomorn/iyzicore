@@ -1,30 +1,29 @@
 using Iyzicore.Request;
 
-namespace Iyzipay.Tests.Functional.Builder.Request
+namespace Iyzipay.Tests.Functional.Builder.Request;
+
+public class CardManagementRetrieveCardBuilder : BaseRequestBuilder
 {
-    public class CardManagementRetrieveCardBuilder : BaseRequestBuilder
+    private string _pageToken;
+
+    public static CardManagementRetrieveCardBuilder Create()
     {
-        private string _pageToken;
+        return new CardManagementRetrieveCardBuilder();
+    }
 
-        public static CardManagementRetrieveCardBuilder Create()
-        {
-            return new CardManagementRetrieveCardBuilder();
-        }
+    public CardManagementRetrieveCardBuilder PageToken(string pageToken)
+    {
+        _pageToken = pageToken;
+        return this;
+    }
 
-        public CardManagementRetrieveCardBuilder PageToken(string pageToken)
+    public RetrieveCardManagementPageCardRequest Build()
+    {
+        return new RetrieveCardManagementPageCardRequest
         {
-            _pageToken = pageToken;
-            return this;
-        }
-
-        public RetrieveCardManagementPageCardRequest Build()
-        {
-            return new RetrieveCardManagementPageCardRequest
-            {
-                PageToken = _pageToken, 
-                ConversationId = _conversationId, 
-                Locale = _locale
-            };
-        }
+            PageToken = _pageToken,
+            ConversationId = _conversationId,
+            Locale = _locale
+        };
     }
 }

@@ -2,26 +2,25 @@
 using Iyzicore.Model;
 using NUnit.Framework;
 
-namespace Iyzipay.Tests
+namespace Iyzipay.Tests;
+
+public class ToStringRequestBuilderTests
 {
-    public class ToStringRequestBuilderTests
+    [Test]
+    public void Should_Append_And_Convert_Object_To_String()
     {
-        [Test]
-        public void Should_Append_And_Convert_Object_To_String()
-        {
-            string requestString = ToStringRequestBuilder.NewInstance()
-                .Append("conversationId", "123456")
-                .Append("locale", Locale.TR.ToString())
-                .Append("price", "1.0").GetRequestString();
+        var requestString = ToStringRequestBuilder.NewInstance()
+            .Append("conversationId", "123456")
+            .Append("locale", Locale.TR.ToString())
+            .Append("price", "1.0").GetRequestString();
 
-            Assert.AreEqual("[conversationId=123456,locale=tr,price=1.0]", requestString);
-        }
+        Assert.AreEqual("[conversationId=123456,locale=tr,price=1.0]", requestString);
+    }
 
-        [Test]
-        public void Should_Convert_To_Nothing()
-        {
-            string requestString = ToStringRequestBuilder.NewInstance().GetRequestString();
-            Assert.AreEqual("[]", requestString);
-        }
+    [Test]
+    public void Should_Convert_To_Nothing()
+    {
+        var requestString = ToStringRequestBuilder.NewInstance().GetRequestString();
+        Assert.AreEqual("[]", requestString);
     }
 }

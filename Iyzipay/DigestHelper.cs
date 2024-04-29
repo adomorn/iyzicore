@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Text;
 
-namespace Iyzicore
+namespace Iyzicore;
+
+public static class DigestHelper
 {
-    public static class DigestHelper
+    public static string DecodeString(string content)
     {
-        public static string DecodeString(string content)
-        {
-            return !string.IsNullOrEmpty(content) ? Encoding.UTF8.GetString(Convert.FromBase64String(content)) : null;
-        }
+        return !string.IsNullOrEmpty(content) ? Encoding.UTF8.GetString(Convert.FromBase64String(content)) : null;
     }
 }

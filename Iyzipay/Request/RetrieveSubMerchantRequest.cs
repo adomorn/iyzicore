@@ -1,17 +1,14 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class RetrieveSubMerchantRequest : BaseRequest
 {
-    public class RetrieveSubMerchantRequest : BaseRequest
-    {
-        public string SubMerchantExternalId { get; set; }
+    public string SubMerchantExternalId { get; set; }
 
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("subMerchantExternalId", SubMerchantExternalId)
-                .GetRequestString();
-        }
+    public override string ToPKIRequestString()
+    {
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("subMerchantExternalId", SubMerchantExternalId)
+            .GetRequestString();
     }
 }

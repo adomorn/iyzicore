@@ -1,7 +1,6 @@
-namespace Iyzicore.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription;
+
+public class RetrievePlanRequest : BaseRequestV2
 {
-    public class RetrievePlanRequest : BaseRequestV2
-    {
-        public string PricingPlanReferenceCode { get; set; }
-    }
+    public string PricingPlanReferenceCode { get; set; }
 }

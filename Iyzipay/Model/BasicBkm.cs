@@ -1,17 +1,16 @@
-﻿using System;
-using Iyzicore.Request;
+﻿using Iyzicore.Request;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class BasicBkm : BasicPaymentResource
 {
-    public class BasicBkm : BasicPaymentResource
-    {
-        public string Token { get; set; }
-        public string CallbackUrl { get; set; }
-        public string PaymentStatus { get; set; }
+    public string Token { get; set; }
+    public string CallbackUrl { get; set; }
+    public string PaymentStatus { get; set; }
 
-        public static BasicBkm Retrieve(RetrieveBkmRequest request, Options options)
-        {
-            return RestHttpClient.Create().Post<BasicBkm>(options.BaseUrl + "/payment/bkm/auth/detail/basic", GetHttpHeaders(request, options), request);
-        }
+    public static BasicBkm Retrieve(RetrieveBkmRequest request, Options options)
+    {
+        return RestHttpClient.Create().Post<BasicBkm>(options.BaseUrl + "/payment/bkm/auth/detail/basic",
+            GetHttpHeaders(request, options), request);
     }
 }

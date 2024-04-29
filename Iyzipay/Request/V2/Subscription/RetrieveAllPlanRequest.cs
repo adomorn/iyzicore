@@ -1,7 +1,6 @@
-namespace Iyzicore.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription;
+
+public class RetrieveAllPlanRequest : PagingRequest
 {
-    public class RetrieveAllPlanRequest : PagingRequest
-    {
-        public string ProductReferenceCode { get; set; }   
-    }
+    public string ProductReferenceCode { get; set; }
 }

@@ -1,10 +1,5 @@
-﻿namespace Iyzicore
-{
-    public class HttpClient : System.Net.Http.HttpClient
-    {
+﻿namespace Iyzicore;
 
-        public HttpClient()
-        {
-        }
-    }
+public class HttpClient : System.Net.Http.HttpClient
+{
 }

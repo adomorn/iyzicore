@@ -1,7 +1,8 @@
-namespace Iyzicore.Model.V2.Iyzilink
+namespace Iyzicore.Model.V2.Iyzilink;
+
+public enum IyziLinkStatus
 {
-    public enum IyziLinkStatus
-    {
-        DELETED, PASSIVE, ACTIVE
-    }
+    DELETED,
+    PASSIVE,
+    ACTIVE
 }

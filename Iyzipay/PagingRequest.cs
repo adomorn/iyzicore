@@ -1,9 +1,7 @@
-namespace Iyzicore
+namespace Iyzicore;
+
+public class PagingRequest : BaseRequestV2
 {
-    public class PagingRequest : BaseRequestV2
-    {
-        public int? Page { get; set; }
-        public int? Count { get; set; }
-        
-    }
+    public int? Page { get; set; }
+    public int? Count { get; set; }
 }

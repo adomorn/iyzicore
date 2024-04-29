@@ -1,12 +1,13 @@
 ﻿using Iyzicore.Request;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class CheckoutFormInitializePreAuth : CheckoutFormInitializeResource
 {
-    public class CheckoutFormInitializePreAuth : CheckoutFormInitializeResource
+    public static CheckoutFormInitializePreAuth Create(CreateCheckoutFormInitializeRequest request, Options options)
     {
-        public static CheckoutFormInitializePreAuth Create(CreateCheckoutFormInitializeRequest request, Options options)
-        {
-            return RestHttpClient.Create().Post<CheckoutFormInitializePreAuth>(options.BaseUrl + "/payment/iyzipos/checkoutform/initialize/preauth/ecom", GetHttpHeaders(request, options), request);
-        }
+        return RestHttpClient.Create().Post<CheckoutFormInitializePreAuth>(
+            options.BaseUrl + "/payment/iyzipos/checkoutform/initialize/preauth/ecom", GetHttpHeaders(request, options),
+            request);
     }
 }

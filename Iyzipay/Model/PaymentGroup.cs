@@ -1,9 +1,8 @@
-﻿namespace Iyzicore.Model
+﻿namespace Iyzicore.Model;
+
+public enum PaymentGroup
 {
-    public enum PaymentGroup
-    {
-        PRODUCT,
-        LISTING,
-        SUBSCRIPTION
-    }
+    PRODUCT,
+    LISTING,
+    SUBSCRIPTION
 }

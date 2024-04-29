@@ -1,9 +1,6 @@
-﻿using System;
+﻿namespace Iyzicore;
 
-namespace Iyzicore
+public interface RequestStringConvertible
 {
-    public interface RequestStringConvertible
-    {
-        string ToPKIRequestString();
-    }
+    string ToPKIRequestString();
 }

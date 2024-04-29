@@ -1,33 +1,32 @@
 using Iyzicore.Request;
 
-namespace Iyzipay.Tests.Functional.Builder.Request
+namespace Iyzipay.Tests.Functional.Builder.Request;
+
+public sealed class RetrieveIyziupFormRequestBuilder : BaseRequestBuilder
 {
-    public sealed class RetrieveIyziupFormRequestBuilder : BaseRequestBuilder
-        {
-            private string _token;
-            
-            private RetrieveIyziupFormRequestBuilder()
-            {
-            }
+    private string _token;
 
-            public static RetrieveIyziupFormRequestBuilder Create()
-            {
-                return new RetrieveIyziupFormRequestBuilder();
-            }
-            
-            public RetrieveIyziupFormRequestBuilder Token(string token)
-            {
-                this._token = token;
-                return this;
-            }
-
-            public RetrieveIyziupFormRequest Build()
-            {
-                RetrieveIyziupFormRequest retrieveIyziupFormRequest = new RetrieveIyziupFormRequest();
-                retrieveIyziupFormRequest.Locale = _locale;
-                retrieveIyziupFormRequest.ConversationId = _conversationId;
-                retrieveIyziupFormRequest.Token = _token;
-                return retrieveIyziupFormRequest;
-            }
-        } 
+    private RetrieveIyziupFormRequestBuilder()
+    {
     }
+
+    public static RetrieveIyziupFormRequestBuilder Create()
+    {
+        return new RetrieveIyziupFormRequestBuilder();
+    }
+
+    public RetrieveIyziupFormRequestBuilder Token(string token)
+    {
+        _token = token;
+        return this;
+    }
+
+    public RetrieveIyziupFormRequest Build()
+    {
+        var retrieveIyziupFormRequest = new RetrieveIyziupFormRequest();
+        retrieveIyziupFormRequest.Locale = _locale;
+        retrieveIyziupFormRequest.ConversationId = _conversationId;
+        retrieveIyziupFormRequest.Token = _token;
+        return retrieveIyziupFormRequest;
+    }
+}

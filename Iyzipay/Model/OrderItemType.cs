@@ -1,8 +1,7 @@
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public enum OrderItemType
 {
-    public enum OrderItemType
-    {
-        PHYSICAL,
-        VIRTUAL
-    }
+    PHYSICAL,
+    VIRTUAL
 }

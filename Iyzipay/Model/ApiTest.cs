@@ -1,10 +1,9 @@
-﻿namespace Iyzicore.Model
+﻿namespace Iyzicore.Model;
+
+public class ApiTest : IyzipayResource
 {
-    public class ApiTest : IyzipayResource
+    public static IyzipayResource Retrieve(Options options)
     {
-        public static IyzipayResource Retrieve(Options options)
-        {
-            return RestHttpClient.Create().Get<IyzipayResource>(options.BaseUrl + "/payment/test");
-        }
+        return RestHttpClient.Create().Get<IyzipayResource>(options.BaseUrl + "/payment/test");
     }
 }

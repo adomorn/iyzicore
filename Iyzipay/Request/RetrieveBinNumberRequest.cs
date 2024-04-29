@@ -1,17 +1,14 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class RetrieveBinNumberRequest : BaseRequest
 {
-    public class RetrieveBinNumberRequest : BaseRequest
-    {
-        public string BinNumber { get; set; }
+    public string BinNumber { get; set; }
 
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("binNumber", BinNumber)
-                .GetRequestString();
-        }
+    public override string ToPKIRequestString()
+    {
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("binNumber", BinNumber)
+            .GetRequestString();
     }
 }

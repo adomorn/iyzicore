@@ -1,31 +1,28 @@
 using System.Collections.Generic;
 using Iyzicore.Model;
-using Iyzicore.Request;
 using Iyzipay.Tests.Functional.Builder;
 using Iyzipay.Tests.Functional.Builder.Request;
 using NUnit.Framework;
 
-namespace Iyzipay.Tests.Functional
+namespace Iyzipay.Tests.Functional;
+
+public class IyziupFormTest : BaseTest
 {
-    public class IyziupFormTest : BaseTest
+    [Test]
+    public void Should_Initialize_Iyziup_Form_For_Standard_Merchant()
     {
-        [Test]
-        public void Should_Initialize_Iyziup_Form_For_Standard_Merchant()
-        {
-            List<OrderItem> orderItems =
-                new List<OrderItem>(new List<OrderItem>()
-                {
-                    OrderItemBuilder.Create().Price("0.3").Build()
-                });
-            
-            CreateIyziupFormInitializeRequest request = CreateIyziupFormInitializeRequestBuilder.Create()
-                .Price("0.3")
-                .PaymentGroup(PaymentGroup.LISTING.ToString())
-                .PaidPrice("0.4")
-                .CallbackUrl("https://www.merchant.com/callback")
-                .OrderItems(orderItems)
-                .Build();
-                
-        }
+        var orderItems =
+            new List<OrderItem>(new List<OrderItem>
+            {
+                OrderItemBuilder.Create().Price("0.3").Build()
+            });
+
+        var request = CreateIyziupFormInitializeRequestBuilder.Create()
+            .Price("0.3")
+            .PaymentGroup(PaymentGroup.LISTING.ToString())
+            .PaidPrice("0.4")
+            .CallbackUrl("https://www.merchant.com/callback")
+            .OrderItems(orderItems)
+            .Build();
     }
 }

@@ -1,8 +1,7 @@
-namespace Iyzicore.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription;
+
+public enum SubscriptionUpgradePeriod
 {
-    public enum SubscriptionUpgradePeriod
-    {
-        NOW = 1,
-        NEXT_PERIOD =2
-    }
+    NOW = 1,
+    NEXT_PERIOD = 2
 }

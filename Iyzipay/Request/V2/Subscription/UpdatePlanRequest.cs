@@ -1,9 +1,8 @@
-namespace Iyzicore.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription;
+
+public class UpdatePlanRequest : BaseRequestV2
 {
-    public class UpdatePlanRequest : BaseRequestV2
-    {
-        public string PricingPlanReferenceCode { get; set; }
-        public string Name { get; set; }
-        public int? TrialPeriodDays { get; set; }
-    }
+    public string PricingPlanReferenceCode { get; set; }
+    public string Name { get; set; }
+    public int? TrialPeriodDays { get; set; }
 }

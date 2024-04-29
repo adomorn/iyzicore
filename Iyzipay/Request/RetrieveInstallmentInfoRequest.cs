@@ -1,19 +1,16 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class RetrieveInstallmentInfoRequest : BaseRequest
 {
-    public class RetrieveInstallmentInfoRequest : BaseRequest
-    {
-        public string BinNumber { get; set; }
-        public string Price { get; set; }
+    public string BinNumber { get; set; }
+    public string Price { get; set; }
 
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("binNumber", BinNumber)
-                .AppendPrice("price", Price)
-                .GetRequestString();
-        }
+    public override string ToPKIRequestString()
+    {
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("binNumber", BinNumber)
+            .AppendPrice("price", Price)
+            .GetRequestString();
     }
 }

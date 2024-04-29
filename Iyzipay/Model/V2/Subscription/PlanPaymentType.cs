@@ -1,7 +1,6 @@
-namespace Iyzicore.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription;
+
+public enum PlanPaymentType
 {
-    public enum PlanPaymentType
-    {
-        RECURRING
-    }
+    RECURRING
 }

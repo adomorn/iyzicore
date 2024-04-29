@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class InstallmentDetail
 {
-    public class InstallmentDetail
-    {
-        public string BinNumber { get; set; }
-        public int Commercial { get; set; }
-        public string Price { get; set; }
-        public string CardType { get; set; }
-        public string CardAssociation { get; set; }
-        public string CardFamilyName { get; set; }
-        public int? Force3Ds { get; set; }
-        public long? BankCode { get; set; }
-        public string BankName { get; set; }
-        public int? ForceCvc { get; set; }
-        public List<InstallmentPrice> InstallmentPrices { get; set; }
-    }
+    public string BinNumber { get; set; }
+    public int Commercial { get; set; }
+    public string Price { get; set; }
+    public string CardType { get; set; }
+    public string CardAssociation { get; set; }
+    public string CardFamilyName { get; set; }
+    public int? Force3Ds { get; set; }
+    public long? BankCode { get; set; }
+    public string BankName { get; set; }
+    public int? ForceCvc { get; set; }
+    public List<InstallmentPrice> InstallmentPrices { get; set; }
 }

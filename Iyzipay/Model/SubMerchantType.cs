@@ -1,9 +1,8 @@
-﻿namespace Iyzicore.Model
+﻿namespace Iyzicore.Model;
+
+public enum SubMerchantType
 {
-    public enum SubMerchantType
-    {
-        PERSONAL,
-        PRIVATE_COMPANY,
-        LIMITED_OR_JOINT_STOCK_COMPANY
-    }
+    PERSONAL,
+    PRIVATE_COMPANY,
+    LIMITED_OR_JOINT_STOCK_COMPANY
 }

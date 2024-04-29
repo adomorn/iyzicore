@@ -1,17 +1,14 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class CreateApprovalRequest : BaseRequest
 {
-    public class CreateApprovalRequest : BaseRequest
-    {
-        public string PaymentTransactionId { get; set; }
+    public string PaymentTransactionId { get; set; }
 
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("paymentTransactionId", PaymentTransactionId)
-                .GetRequestString();
-        }
+    public override string ToPKIRequestString()
+    {
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("paymentTransactionId", PaymentTransactionId)
+            .GetRequestString();
     }
 }

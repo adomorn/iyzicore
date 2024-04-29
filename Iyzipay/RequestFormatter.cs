@@ -1,34 +1,27 @@
-﻿using System;
+﻿namespace Iyzicore;
 
-namespace Iyzicore
+public class RequestFormatter
 {
-    public class RequestFormatter
+    public static string FormatPrice(string price)
     {
-        public static string FormatPrice(string price)
-        {
-            if (!price.Contains("."))
+        if (!price.Contains(".")) return price + ".0";
+        var subStrIndex = 0;
+        var priceReversed = StringHelper.Reverse(price);
+        for (var i = 0; i < priceReversed.Length; i++)
+            if (priceReversed[i].Equals('0'))
             {
-                return price + ".0";
+                subStrIndex = i + 1;
             }
-            var subStrIndex = 0;
-            var priceReversed = StringHelper.Reverse(price);
-            for (var i = 0; i < priceReversed.Length; i++)
+            else if (priceReversed[i].Equals('.'))
             {
-                if (priceReversed[i].Equals('0'))
-                {
-                    subStrIndex = i + 1;
-                }
-                else if (priceReversed[i].Equals('.'))
-                {
-                    priceReversed = "0" + priceReversed;
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                priceReversed = "0" + priceReversed;
+                break;
             }
-            return StringHelper.Reverse(priceReversed.Substring(subStrIndex));
-        }
+            else
+            {
+                break;
+            }
+
+        return StringHelper.Reverse(priceReversed.Substring(subStrIndex));
     }
 }

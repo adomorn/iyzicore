@@ -1,7 +1,5 @@
-namespace Iyzicore.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription;
+
+public class UpdateCardFormResource : CheckoutFormResource
 {
-    public class UpdateCardFormResource : CheckoutFormResource
-    {
-        
-    }
 }

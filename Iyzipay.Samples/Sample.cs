@@ -1,33 +1,32 @@
-﻿using Newtonsoft.Json;
 ﻿using System.Diagnostics;
 using Iyzicore;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using NUnit.Framework;
 
-namespace Iyzipay.Samples
+namespace Iyzipay.Samples;
+
+public class Sample
 {
-    public class Sample
+    protected Options options;
+
+    [SetUp]
+    public void Initialize()
     {
-        protected Options options;
+        options = new Options();
+        options.ApiKey = "your api key";
+        options.SecretKey = "your secret key";
+        options.BaseUrl = "https://sandbox-api.iyzipay.com";
+    }
 
-        [SetUp]
-        public void Initialize()
+    protected void PrintResponse<T>(T resource)
+    {
+        TraceListener consoleListener = new ConsoleTraceListener();
+        Trace.Listeners.Add(consoleListener);
+        Trace.WriteLine(JsonConvert.SerializeObject(resource, new JsonSerializerSettings
         {
-            options = new Options();
-            options.ApiKey = "your api key";
-            options.SecretKey = "your secret key";
-            options.BaseUrl = "https://sandbox-api.iyzipay.com";
-        }
-
-        protected void PrintResponse<T>(T resource)
-        {
-            TraceListener consoleListener = new ConsoleTraceListener();
-            Trace.Listeners.Add(consoleListener);
-            Trace.WriteLine(JsonConvert.SerializeObject(resource, new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented,
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            }));
-        }
+            Formatting = Formatting.Indented,
+            ContractResolver = new CamelCasePropertyNamesContractResolver()
+        }));
     }
 }

@@ -1,24 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <AssemblyName>Iyzicore</AssemblyName>
-    <RootNamespace>Iyzicore</RootNamespace>
-    <Version>2.1.61</Version>
-    <Authors>Iyzico</Authors>
-    <Description>iyzipay api .net client</Description>
-    <PackageProjectUrl>https://github.com/iyzico/iyzipay-dotnet&lt;/projectUrl</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/iyzico/iyzipay-dotnet/blob/master/LICENSE</PackageLicenseUrl>
-    <RepositoryUrl>https://github.com/iyzico/iyzipay-dotnet</RepositoryUrl>
-    <PackageIconUrl>https://en.gravatar.com/userimage/100711999/40aab086bed8dabfb387c0772a73ea7e.png</PackageIconUrl>
-    <Copyright>Copyright 2016</Copyright>
-    <TargetFramework>net8.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <AssemblyName>Iyzicore</AssemblyName>
+        <RootNamespace>Iyzicore</RootNamespace>
+        <Version>2.1.61</Version>
+        <Authors>Iyzico</Authors>
+        <Description>iyzipay api .net client</Description>
+        <PackageProjectUrl>https://github.com/iyzico/iyzipay-dotnet&lt;/projectUrl</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/iyzico/iyzipay-dotnet/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/iyzico/iyzipay-dotnet</RepositoryUrl>
+        <PackageIconUrl>https://en.gravatar.com/userimage/100711999/40aab086bed8dabfb387c0772a73ea7e.png</PackageIconUrl>
+        <Copyright>Copyright 2016</Copyright>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
 
 
-
-
-  <ItemGroup >
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2"/>
+    </ItemGroup>
 
 </Project>

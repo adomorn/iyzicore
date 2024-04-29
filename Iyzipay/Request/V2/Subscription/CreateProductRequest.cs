@@ -1,8 +1,7 @@
-namespace Iyzicore.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription;
+
+public class CreateProductRequest : BaseRequestV2
 {
-    public class CreateProductRequest : BaseRequestV2
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-    }
+    public string Name { get; set; }
+    public string Description { get; set; }
 }

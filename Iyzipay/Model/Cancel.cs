@@ -1,20 +1,19 @@
-﻿using System;
-using Iyzicore.Request;
+﻿using Iyzicore.Request;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class Cancel : IyzipayResource
 {
-    public class Cancel : IyzipayResource
-    {
-        public string PaymentId { get; set; }
-        public string Price { get; set; }
-        public string Currency { get; set; }
-        public string ConnectorName { get; set; }
-        public string AuthCode { get; set; }
-        public string HostReference { get; set; }
+    public string PaymentId { get; set; }
+    public string Price { get; set; }
+    public string Currency { get; set; }
+    public string ConnectorName { get; set; }
+    public string AuthCode { get; set; }
+    public string HostReference { get; set; }
 
-        public static Cancel Create(CreateCancelRequest request, Options options)
-        {
-            return RestHttpClient.Create().Post<Cancel>(options.BaseUrl + "/payment/cancel", GetHttpHeaders(request, options), request);
-        }
+    public static Cancel Create(CreateCancelRequest request, Options options)
+    {
+        return RestHttpClient.Create()
+            .Post<Cancel>(options.BaseUrl + "/payment/cancel", GetHttpHeaders(request, options), request);
     }
 }

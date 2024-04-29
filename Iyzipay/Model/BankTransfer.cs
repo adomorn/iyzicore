@@ -1,16 +1,15 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Iyzicore.Model
+namespace Iyzicore.Model;
+
+public class BankTransfer
 {
-    public class BankTransfer
-    {
-        public string SubMerchantKey { get; set; }
-        public string Iban { get; set; }
-        public string ContactName { get; set; }
-        public string ContactSurname { get; set; }
-        public string LegalCompanyTitle { get; set; }
-        [JsonProperty(PropertyName= "marketplaceSubmerchantType")]
-        public string MarketplaceSubMerchantType { get; set; }
-    }
+    public string SubMerchantKey { get; set; }
+    public string Iban { get; set; }
+    public string ContactName { get; set; }
+    public string ContactSurname { get; set; }
+    public string LegalCompanyTitle { get; set; }
+
+    [JsonProperty(PropertyName = "marketplaceSubmerchantType")]
+    public string MarketplaceSubMerchantType { get; set; }
 }

@@ -1,17 +1,14 @@
-using System;
+namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class RetrieveCardManagementPageCardRequest : BaseRequest
 {
-    public class RetrieveCardManagementPageCardRequest : BaseRequest
+    public string PageToken { get; set; }
+
+    public override string ToPKIRequestString()
     {
-        public string PageToken { get; set; }
-        
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("token", PageToken)
-                .GetRequestString();
-        }
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("token", PageToken)
+            .GetRequestString();
     }
 }

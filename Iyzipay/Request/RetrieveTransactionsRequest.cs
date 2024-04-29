@@ -1,17 +1,14 @@
-﻿using System;
+﻿namespace Iyzicore.Request;
 
-namespace Iyzicore.Request
+public class RetrieveTransactionsRequest : BaseRequest
 {
-    public class RetrieveTransactionsRequest: BaseRequest
-    {
-        public string Date { get; set; }
+    public string Date { get; set; }
 
-        public override string ToPKIRequestString()
-        {
-            return ToStringRequestBuilder.NewInstance()
-                .AppendSuper(base.ToPKIRequestString())
-                .Append("date", Date)
-                .GetRequestString();
-        }
+    public override string ToPKIRequestString()
+    {
+        return ToStringRequestBuilder.NewInstance()
+            .AppendSuper(base.ToPKIRequestString())
+            .Append("date", Date)
+            .GetRequestString();
     }
 }

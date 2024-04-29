@@ -1,7 +1,6 @@
-namespace Iyzicore.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription;
+
+public class RetrieveCustomerRequest : BaseRequestV2
 {
-    public class RetrieveCustomerRequest : BaseRequestV2
-    {
-        public string CustomerReferenceCode { get; set; }
-    }
+    public string CustomerReferenceCode { get; set; }
 }
