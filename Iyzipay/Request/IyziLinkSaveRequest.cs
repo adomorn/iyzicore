@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Iyzipay.Request
+namespace Iyzicore.Request
 {
     public class IyziLinkSaveRequest : BaseRequestV2
     {

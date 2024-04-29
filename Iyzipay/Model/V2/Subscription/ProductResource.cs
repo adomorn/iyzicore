@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Iyzipay.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription
 {
     public class ProductResource
     {

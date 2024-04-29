@@ -1,4 +1,4 @@
-namespace Iyzipay.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription
 {
     public class DeleteProductRequest : BaseRequestV2
     {

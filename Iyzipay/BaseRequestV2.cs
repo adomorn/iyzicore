@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class BaseRequestV2
     {
-        public String Locale { get; set; }
-        public String ConversationId { get; set; }
+        public string Locale { get; set; }
+        public string ConversationId { get; set; }
     }
 }

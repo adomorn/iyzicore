@@ -1,7 +1,7 @@
 using System;
-using Iyzipay.Request;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model.V2.Iyzilink
+namespace Iyzicore.Model.V2.Iyzilink
 {
     public class IyziLink : IyzipayResourceV2
     {
@@ -24,7 +24,7 @@ namespace Iyzipay.Model.V2.Iyzilink
             var queryParams = GetQueryParams(request);
             var iyzilinkQueryParam = "productType=IYZILINK";
             
-            queryParams = String.IsNullOrEmpty(queryParams)
+            queryParams = string.IsNullOrEmpty(queryParams)
                 ? "?" + iyzilinkQueryParam
                 : queryParams + "&" + iyzilinkQueryParam;
             
@@ -51,7 +51,7 @@ namespace Iyzipay.Model.V2.Iyzilink
 
             var queryParams = "?conversationId=" + request.ConversationId;
 
-            if (!String.IsNullOrEmpty(request.Locale)) {
+            if (!string.IsNullOrEmpty(request.Locale)) {
                 queryParams += "&locale=" + request.Locale;
             }
 

@@ -1,4 +1,5 @@
-﻿using Iyzipay.Model;
+﻿using Iyzicore;
+using Iyzicore.Model;
 using NUnit.Framework;
 
 namespace Iyzipay.Samples

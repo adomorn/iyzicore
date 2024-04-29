@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Iyzipay.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription
 {
     public enum SubscriptionStatus
     { 

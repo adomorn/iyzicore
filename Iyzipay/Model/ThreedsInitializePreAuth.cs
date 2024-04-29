@@ -1,13 +1,13 @@
-﻿using Iyzipay.Request;
-using System;
+﻿using System;
+using Iyzicore.Request;
 using Newtonsoft.Json;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class ThreedsInitializePreAuth : IyzipayResource
     {
         [JsonProperty(PropertyName = "threeDSHtmlContent")]
-        public String HtmlContent { get; set; }
+        public string HtmlContent { get; set; }
 
         public static ThreedsInitializePreAuth Create(CreatePaymentRequest request, Options options)
         {

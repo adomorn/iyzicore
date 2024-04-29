@@ -1,17 +1,17 @@
-﻿using Iyzipay.Request;
+﻿using System;
+using Iyzicore.Request;
 using Newtonsoft.Json;
-using System;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class BinNumber : IyzipayResource
     {
         [JsonProperty(PropertyName = "binNumber")]
-        public String Bin { get; set; }
-        public String CardType { get; set; }
-        public String CardAssociation { get; set; }
-        public String CardFamily { get; set; }
-        public String BankName { get; set; }
+        public string Bin { get; set; }
+        public string CardType { get; set; }
+        public string CardAssociation { get; set; }
+        public string CardFamily { get; set; }
+        public string BankName { get; set; }
         public long BankCode { get; set; }
         public int Commercial { get; set; }
 

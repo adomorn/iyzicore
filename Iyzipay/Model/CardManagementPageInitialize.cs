@@ -1,6 +1,6 @@
-using Iyzipay.Request;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class CardManagementPageInitialize  : IyzipayResource
     {

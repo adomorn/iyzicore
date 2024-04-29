@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class LoyaltyReward : RequestStringConvertible
     {
-        public String RewardAmount { get; set; }
+        public string RewardAmount { get; set; }
         public int RewardUsage { get; set; }
 
-        public virtual String ToPKIRequestString()
+        public virtual string ToPKIRequestString()
         {
             return ToStringRequestBuilder.NewInstance()
                 .Append("rewardAmount", RewardAmount)

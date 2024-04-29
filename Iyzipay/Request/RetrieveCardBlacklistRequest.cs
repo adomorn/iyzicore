@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Iyzipay.Request
+namespace Iyzicore.Request
 {
     public class RetrieveCardBlacklistRequest : BaseRequest
     {
-        public String CardNumber { get; set; }
+        public string CardNumber { get; set; }
 
-        public override String ToPKIRequestString()
+        public override string ToPKIRequestString()
         {
             return ToStringRequestBuilder.NewInstance()
                 .AppendSuper(base.ToPKIRequestString())

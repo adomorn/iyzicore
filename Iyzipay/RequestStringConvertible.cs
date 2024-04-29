@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public interface RequestStringConvertible
     {
-        String ToPKIRequestString();
+        string ToPKIRequestString();
     }
 }

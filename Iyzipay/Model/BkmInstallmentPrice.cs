@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
   public  class BkmInstallmentPrice : RequestStringConvertible
     {
         public int? InstallmentNumber { get; set; }
-        public String TotalPrice { get; set; }
+        public string TotalPrice { get; set; }
 
-        public String ToPKIRequestString()
+        public string ToPKIRequestString()
         {
             return ToStringRequestBuilder.NewInstance()
                 .Append("installmentNumber", InstallmentNumber)

@@ -1,4 +1,4 @@
-using Iyzipay.Request;
+using Iyzicore.Request;
 
 namespace Iyzipay.Tests.Functional.Builder.Request
 {

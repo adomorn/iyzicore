@@ -1,7 +1,7 @@
 using System;
-using Iyzipay.Request.V2.Subscription;
+using Iyzicore.Request.V2.Subscription;
 
-namespace Iyzipay.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription
 {
     public class Subscription : IyzipayResourceV2
     {
@@ -66,35 +66,35 @@ namespace Iyzipay.Model.V2.Subscription
 
             var queryParams = "?conversationId=" + request.ConversationId;
 
-            if (!String.IsNullOrEmpty(request.Locale)) {
+            if (!string.IsNullOrEmpty(request.Locale)) {
                 queryParams += "&locale=" + request.Locale;
             }
             
-            if (!String.IsNullOrEmpty(request.PricingPlanReferenceCode)) {
+            if (!string.IsNullOrEmpty(request.PricingPlanReferenceCode)) {
                 queryParams += "&pricingPlanReferenceCode=" + request.PricingPlanReferenceCode;
             }
             
-            if (!String.IsNullOrEmpty(request.SubscriptionReferenceCode)) {
+            if (!string.IsNullOrEmpty(request.SubscriptionReferenceCode)) {
                 queryParams += "&subscriptionReferenceCode=" + request.SubscriptionReferenceCode;
             }
             
-            if (!String.IsNullOrEmpty(request.ParentReferenceCode)) {
+            if (!string.IsNullOrEmpty(request.ParentReferenceCode)) {
                 queryParams += "&parentReferenceCode=" + request.ParentReferenceCode;
             }
             
-            if (!String.IsNullOrEmpty(request.CustomerReferenceCode)) {
+            if (!string.IsNullOrEmpty(request.CustomerReferenceCode)) {
                 queryParams += "&customerReferenceCode=" + request.CustomerReferenceCode;
             }
             
-            if (!String.IsNullOrEmpty(request.SubscriptionStatus)) {
+            if (!string.IsNullOrEmpty(request.SubscriptionStatus)) {
                 queryParams += "&subscriptionStatus=" + request.SubscriptionStatus;
             }
             
-            if (!String.IsNullOrEmpty(request.StartDate)) {
+            if (!string.IsNullOrEmpty(request.StartDate)) {
                 queryParams += "&startDate=" + request.StartDate;
             }
             
-            if (!String.IsNullOrEmpty(request.EndDate)) {
+            if (!string.IsNullOrEmpty(request.EndDate)) {
                 queryParams += "&endDate=" + request.EndDate;
             }
 

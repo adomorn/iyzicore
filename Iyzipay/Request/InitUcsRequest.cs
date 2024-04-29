@@ -1,4 +1,4 @@
-﻿namespace Iyzipay.Request
+﻿namespace Iyzicore.Request
 {
     public class InitUcsRequest : BaseRequestV2
     {

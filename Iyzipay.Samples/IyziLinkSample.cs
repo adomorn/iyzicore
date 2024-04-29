@@ -1,7 +1,8 @@
-using Iyzipay.Model;
-using Iyzipay.Model.V2;
-using Iyzipay.Model.V2.Iyzilink;
-using Iyzipay.Request;
+using Iyzicore;
+using Iyzicore.Model;
+using Iyzicore.Model.V2;
+using Iyzicore.Model.V2.Iyzilink;
+using Iyzicore.Request;
 using NUnit.Framework;
 
 namespace Iyzipay.Samples

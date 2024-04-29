@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class IyzipayConstants
     {
-        public static readonly String CLIENT_VERSION = "iyzipay-dotnet-2.1.61";
+        public static readonly string CLIENT_VERSION = "iyzipay-dotnet-2.1.61";
     }
 }

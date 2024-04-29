@@ -1,5 +1,5 @@
-﻿using Iyzipay.Model;
-using Iyzipay.Request;
+﻿using Iyzicore.Model;
+using Iyzicore.Request;
 
 namespace Iyzipay.Tests.Functional.Builder.Request
 {

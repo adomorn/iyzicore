@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Iyzipay.Model;
-using Iyzipay.Request;
+using Iyzicore.Model;
+using Iyzicore.Request;
 using Iyzipay.Tests.Functional.Builder;
 using Iyzipay.Tests.Functional.Builder.Request;
 using NUnit.Framework;

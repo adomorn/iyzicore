@@ -1,4 +1,4 @@
-namespace Iyzipay
+namespace Iyzicore
 {
     public class PagingRequest : BaseRequestV2
     {

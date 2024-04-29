@@ -1,7 +1,7 @@
 using System;
-using Iyzipay.Request.V2.Subscription;
+using Iyzicore.Request.V2.Subscription;
 
-namespace Iyzipay.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription
 {
     public class Plan : IyzipayResourceV2
     {
@@ -42,7 +42,7 @@ namespace Iyzipay.Model.V2.Subscription
 
             var queryParams = "?conversationId=" + request.ConversationId;
 
-            if (!String.IsNullOrEmpty(request.Locale)) {
+            if (!string.IsNullOrEmpty(request.Locale)) {
                 queryParams += "&locale=" + request.Locale;
             }
 

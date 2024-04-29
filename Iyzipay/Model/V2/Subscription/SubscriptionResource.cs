@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Iyzipay.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription
 {
     public class SubscriptionResource : SubscriptionCreatedResource
     {

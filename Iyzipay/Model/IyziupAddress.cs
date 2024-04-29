@@ -1,16 +1,16 @@
 using System;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class IyziupAddress
     {
-        public String Alias { get; set; }
-        public String AddressLine1 { get; set; }
-        public String AddressLine2 { get; set; }
-        public String ZipCode { get; set; }
-        public String ContactName { get; set; }
-        public String City { get; set; }
-        public String Country { get; set; }
+        public string Alias { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string ZipCode { get; set; }
+        public string ContactName { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
         
         public string ToPKIRequestString()
         {

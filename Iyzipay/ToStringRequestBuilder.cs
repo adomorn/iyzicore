@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class ToStringRequestBuilder
     {
-        private String _requestString;
+        private string _requestString;
 
-        private ToStringRequestBuilder(String requestString)
+        private ToStringRequestBuilder(string requestString)
         {
             this._requestString = requestString;
         }
@@ -17,12 +17,12 @@ namespace Iyzipay
             return new ToStringRequestBuilder("");
         }
 
-        public static ToStringRequestBuilder NewInstance(String requestString)
+        public static ToStringRequestBuilder NewInstance(string requestString)
         {
             return new ToStringRequestBuilder(requestString);
         }
 
-        public ToStringRequestBuilder AppendSuper(String superRequestString)
+        public ToStringRequestBuilder AppendSuper(string superRequestString)
         {
             if (superRequestString != null)
             {
@@ -37,7 +37,7 @@ namespace Iyzipay
             return this;
         }
 
-        public ToStringRequestBuilder Append(String key, Object value = null)
+        public ToStringRequestBuilder Append(string key, object value = null)
         {
             if (value != null)
             {
@@ -53,7 +53,7 @@ namespace Iyzipay
             return this;
         }
 
-        public ToStringRequestBuilder AppendPrice(String key, String value)
+        public ToStringRequestBuilder AppendPrice(string key, string value)
         {
             if (value != null)
             {
@@ -62,7 +62,7 @@ namespace Iyzipay
             return this;
         }
 
-        public ToStringRequestBuilder AppendList<T>(String key, List<T> list = null) where T : RequestStringConvertible
+        public ToStringRequestBuilder AppendList<T>(string key, List<T> list = null) where T : RequestStringConvertible
         {
             if (list != null)
             {
@@ -76,7 +76,7 @@ namespace Iyzipay
             return this;
         }
 
-        public ToStringRequestBuilder AppendList (String key, List<int> list = null)
+        public ToStringRequestBuilder AppendList (string key, List<int> list = null)
         {
             if (list != null)
             {
@@ -90,7 +90,7 @@ namespace Iyzipay
             return this;
         }
 
-        private ToStringRequestBuilder AppendKeyValue(String key, String value)
+        private ToStringRequestBuilder AppendKeyValue(string key, string value)
         {
             if (value != null)
             {
@@ -99,7 +99,7 @@ namespace Iyzipay
             return this;
         }
 
-        private ToStringRequestBuilder AppendKeyValueArray(String key, String value)
+        private ToStringRequestBuilder AppendKeyValueArray(string key, string value)
         {
             if (value != null)
             {
@@ -124,7 +124,7 @@ namespace Iyzipay
             return this;
         }
 
-        public String GetRequestString()
+        public string GetRequestString()
         {
             RemoveTrailingComma();
             AppendPrefix();

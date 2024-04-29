@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class RequestFormatter
     {
-        public static String FormatPrice(String price)
+        public static string FormatPrice(string price)
         {
             if (!price.Contains("."))
             {

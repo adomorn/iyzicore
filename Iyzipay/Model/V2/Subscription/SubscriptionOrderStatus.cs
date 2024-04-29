@@ -1,4 +1,4 @@
-namespace Iyzipay.Model.V2.Subscription
+namespace Iyzicore.Model.V2.Subscription
 {
     public enum SubscriptionOrderStatus
     {

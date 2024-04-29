@@ -1,4 +1,5 @@
-﻿using Iyzipay.Model;
+﻿using Iyzicore;
+using Iyzicore.Model;
 using NUnit.Framework;
 
 namespace Iyzipay.Tests.Functional
@@ -8,7 +9,7 @@ namespace Iyzipay.Tests.Functional
         [Test]
         public void Should_Test_Api()
         {
-            IyzipayResource iyzipayResource = Model.ApiTest.Retrieve(_options);
+            IyzipayResource iyzipayResource = Iyzicore.Model.ApiTest.Retrieve(_options);
 
             PrintResponse(iyzipayResource);
 

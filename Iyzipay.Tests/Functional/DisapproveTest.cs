@@ -1,6 +1,6 @@
 ﻿using System;
-using Iyzipay.Model;
-using Iyzipay.Request;
+using Iyzicore.Model;
+using Iyzicore.Request;
 using Iyzipay.Tests.Functional.Builder.Request;
 using NUnit.Framework;
 
@@ -23,7 +23,7 @@ namespace Iyzipay.Tests.Functional
 
             Payment payment = Payment.Create(paymentRequest, _options);
 
-            String paymentTransactionId = payment.PaymentItems[0].PaymentTransactionId;
+            string paymentTransactionId = payment.PaymentItems[0].PaymentTransactionId;
 
             CreateApprovalRequest approvalRequest = CreateApprovalRequestBuilder.Create()
                 .PaymentTransactionId(paymentTransactionId)

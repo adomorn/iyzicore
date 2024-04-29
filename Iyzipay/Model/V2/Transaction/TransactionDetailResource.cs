@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Iyzipay.Model.V2.Transaction
+namespace Iyzicore.Model.V2.Transaction
 {
     public class TransactionDetailResource : IyzipayResourceV2
     {

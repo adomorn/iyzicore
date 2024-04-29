@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Iyzipay.Request.V2
+namespace Iyzicore.Request.V2
 {
     public class RetrieveTransactionDetailRequest : BaseRequestV2
     {
-        public String PaymentConversationId { get; set; }
-        public String PaymentId { get; set; }
+        public string PaymentConversationId { get; set; }
+        public string PaymentId { get; set; }
     }
 }

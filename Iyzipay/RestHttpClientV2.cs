@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using Newtonsoft.Json;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     class RestHttpClientV2
     {
@@ -20,7 +20,7 @@ namespace Iyzipay
             return new RestHttpClientV2();
         }
 
-        public T Get<T>(String url, Dictionary<string, string> headers) where T : IyzipayResourceV2
+        public T Get<T>(string url, Dictionary<string, string> headers) where T : IyzipayResourceV2
         {
             var requestMessage = new HttpRequestMessage
             {
@@ -40,7 +40,7 @@ namespace Iyzipay
             return response;
         }
 
-        public T Post<T>(String url, Dictionary<string, string> headers, BaseRequestV2 request) where T : IyzipayResourceV2
+        public T Post<T>(string url, Dictionary<string, string> headers, BaseRequestV2 request) where T : IyzipayResourceV2
         {
             var requestMessage = new HttpRequestMessage
             {
@@ -60,7 +60,7 @@ namespace Iyzipay
             return response;
         }
         
-        public T Put<T>(String url, Dictionary<string, string> headers, BaseRequestV2 request) where T : IyzipayResourceV2
+        public T Put<T>(string url, Dictionary<string, string> headers, BaseRequestV2 request) where T : IyzipayResourceV2
         {
             var requestMessage = new HttpRequestMessage
             {
@@ -80,7 +80,7 @@ namespace Iyzipay
             return response;
         }
         
-        public T Delete<T>(String url, Dictionary<string, string> headers, BaseRequestV2 request) where T : IyzipayResourceV2
+        public T Delete<T>(string url, Dictionary<string, string> headers, BaseRequestV2 request) where T : IyzipayResourceV2
         {
             var requestMessage = new HttpRequestMessage
             {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Iyzipay.Model;
-using Iyzipay.Request;
+using Iyzicore.Model;
+using Iyzicore.Request;
 using Iyzipay.Tests.Functional.Util;
 
 namespace Iyzipay.Tests.Functional.Builder.Request
@@ -8,7 +8,7 @@ namespace Iyzipay.Tests.Functional.Builder.Request
     public sealed class CreateBkmInitializeRequestBuilder : BaseRequestBuilder
     {
         private string _basketId = RandomGenerator.RandomId;
-        private string _paymentGroup = Model.PaymentGroup.LISTING.ToString();
+        private string _paymentGroup = Iyzicore.Model.PaymentGroup.LISTING.ToString();
         private Buyer _buyer = BuyerBuilder.Create().Build();
         private Address _shippingAddress = AddressBuilder.Create().Build();
         private Address _billingAddress = AddressBuilder.Create().Build();

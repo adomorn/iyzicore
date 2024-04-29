@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Iyzicore;
+using NUnit.Framework;
 
 namespace Iyzipay.Tests
 {

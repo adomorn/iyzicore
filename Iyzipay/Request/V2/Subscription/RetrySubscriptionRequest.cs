@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Iyzipay.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription
 {
     public class RetrySubscriptionRequest : BaseRequestV2
     {

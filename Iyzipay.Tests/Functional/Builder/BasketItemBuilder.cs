@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Iyzipay.Model;
+using Iyzicore.Model;
 
 namespace Iyzipay.Tests.Functional.Builder
 {

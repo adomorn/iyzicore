@@ -1,4 +1,4 @@
-namespace Iyzipay.Model.V2
+namespace Iyzicore.Model.V2
 {
     public class ResponseData<T> : IyzipayResourceV2
     {

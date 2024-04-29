@@ -1,12 +1,12 @@
-﻿using Iyzipay.Request;
-using System;
+﻿using System;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class BasicBkmInitialize : IyzipayResource
     {
-        public String HtmlContent { get; set; }
-        public String Token { get; set; }
+        public string HtmlContent { get; set; }
+        public string Token { get; set; }
         
         public static BasicBkmInitialize Create(CreateBasicBkmInitializeRequest request, Options options)
         {

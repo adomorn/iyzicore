@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Iyzipay.Request
+namespace Iyzicore.Request
 {
    public class RetrieveApmRequest : BaseRequest
     {
-        public String PaymentId { get; set; }
+        public string PaymentId { get; set; }
 
-        public override String ToPKIRequestString()
+        public override string ToPKIRequestString()
         {
             return ToStringRequestBuilder.NewInstance()
                 .AppendSuper(base.ToPKIRequestString())

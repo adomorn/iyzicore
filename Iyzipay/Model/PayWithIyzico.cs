@@ -1,12 +1,12 @@
-﻿using Iyzipay.Request;
-using System;
+﻿using System;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class PayWithIyzico : PaymentResource
     {
-        public String Token { get; set; }
-        public String CallbackUrl { get; set; }      
+        public string Token { get; set; }
+        public string CallbackUrl { get; set; }      
 
         public static PayWithIyzico Retrieve(RetrievePayWithIyzicoRequest request, Options options)
         {

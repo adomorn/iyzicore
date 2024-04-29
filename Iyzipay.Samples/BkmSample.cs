@@ -1,6 +1,6 @@
-﻿using Iyzipay.Request;
-using Iyzipay.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Iyzicore.Model;
+using Iyzicore.Request;
 using NUnit.Framework;
 
 namespace Iyzipay.Samples

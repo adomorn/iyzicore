@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Iyzipay.Model;
-using Iyzipay.Request;
+using Iyzicore.Model;
+using Iyzicore.Request;
 using Iyzipay.Tests.Functional.Util;
 
 namespace Iyzipay.Tests.Functional.Builder.Request
@@ -8,9 +8,9 @@ namespace Iyzipay.Tests.Functional.Builder.Request
     public class CreateIyziupFormInitializeRequestBuilder : BaseRequestBuilder
     {
         private string _merchantOrderId = RandomGenerator.RandomId;
-        private string _paymentGroup = Model.PaymentGroup.LISTING.ToString();
+        private string _paymentGroup = Iyzicore.Model.PaymentGroup.LISTING.ToString();
         private string _paymentSource;
-        private string _currency = Model.Currency.TRY.ToString();
+        private string _currency = Iyzicore.Model.Currency.TRY.ToString();
         private int _forceThreeDS;
         private List<int> _enabledInstallments = new List<int>() {2, 3, 6, 9};
         private string _enabledCardFamily;

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Iyzicore;
 using NUnit.Framework;
 
 namespace Iyzipay.Tests

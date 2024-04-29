@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using Newtonsoft.Json;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class RestHttpClient
     {
@@ -20,13 +20,13 @@ namespace Iyzipay
             return new RestHttpClient();
         }
 
-        public T Get<T>(String url)
+        public T Get<T>(string url)
         {
             var httpResponseMessage = HttpClient.GetAsync(url).Result; 
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
         
-        public T Get<T>(String url, Dictionary<string,string> headers)
+        public T Get<T>(string url, Dictionary<string,string> headers)
         {
             var requestMessage = new HttpRequestMessage
             {
@@ -43,7 +43,7 @@ namespace Iyzipay
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
 
-        public T Post<T>(String url, Dictionary<string,string> headers, BaseRequest request)
+        public T Post<T>(string url, Dictionary<string,string> headers, BaseRequest request)
         { 
             var requestMessage = new HttpRequestMessage
             {
@@ -61,7 +61,7 @@ namespace Iyzipay
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
 
-        public T Delete<T>(String url, Dictionary<string, string> headers, BaseRequest request)
+        public T Delete<T>(string url, Dictionary<string, string> headers, BaseRequest request)
         { 
             var requestMessage = new HttpRequestMessage
             {
@@ -79,7 +79,7 @@ namespace Iyzipay
             return JsonConvert.DeserializeObject<T>(httpResponseMessage.Content.ReadAsStringAsync().Result);
         }
 
-        public T Put<T>(String url, Dictionary<string, string> headers, BaseRequest request)
+        public T Put<T>(string url, Dictionary<string, string> headers, BaseRequest request)
         {
             var requestMessage = new HttpRequestMessage
             {

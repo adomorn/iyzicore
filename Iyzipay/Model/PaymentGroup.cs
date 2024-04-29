@@ -1,4 +1,4 @@
-﻿namespace Iyzipay.Model
+﻿namespace Iyzicore.Model
 {
     public enum PaymentGroup
     {

@@ -1,6 +1,6 @@
-using Iyzipay.Model;
+using Iyzicore.Model;
 
-namespace Iyzipay.Request.V2.Subscription
+namespace Iyzicore.Request.V2.Subscription
 {
     public class UpdateCustomerRequest : BaseRequestV2
     {

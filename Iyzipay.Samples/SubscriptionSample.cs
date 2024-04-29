@@ -1,9 +1,10 @@
 using System;
 using System.Linq;
-using Iyzipay.Model;
-using Iyzipay.Model.V2;
-using Iyzipay.Model.V2.Subscription;
-using Iyzipay.Request.V2.Subscription;
+using Iyzicore;
+using Iyzicore.Model;
+using Iyzicore.Model.V2;
+using Iyzicore.Model.V2.Subscription;
+using Iyzicore.Request.V2.Subscription;
 using NUnit.Framework;
 
 namespace Iyzipay.Samples

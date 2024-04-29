@@ -1,12 +1,12 @@
 using System;
 
-namespace Iyzipay.Request
+namespace Iyzicore.Request
 {
     public class RetrieveIyziupFormRequest : BaseRequest
     {
-        public String Token { set; get; }
+        public string Token { set; get; }
 
-        public override String ToPKIRequestString()
+        public override string ToPKIRequestString()
         {
             return ToStringRequestBuilder.NewInstance()
                 .AppendSuper(base.ToPKIRequestString())

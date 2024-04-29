@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
+using Iyzicore.Request;
 using Newtonsoft.Json;
-using Iyzipay.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class BouncedBankTransferList : IyzipayResource
     {

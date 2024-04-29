@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using Newtonsoft.Json;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class InstallmentPrice
     {
         [JsonProperty(PropertyName = "InstallmentPrice")]
-        public String Price { get; set; }
-        public String TotalPrice { get; set; }
+        public string Price { get; set; }
+        public string TotalPrice { get; set; }
         public int? InstallmentNumber { get; set; }
     }
 }

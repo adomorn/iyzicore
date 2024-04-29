@@ -1,14 +1,14 @@
-﻿using Iyzipay.Request;
-using System;
+﻿using System;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class CardBlacklist : IyzipayResource
     {
-        public String CardUserKey { get; set; }
-        public String CardToken { get; set; }
-        public String CardNumber { get; set; }
-        public Boolean Blacklisted { get; set; }
+        public string CardUserKey { get; set; }
+        public string CardToken { get; set; }
+        public string CardNumber { get; set; }
+        public bool Blacklisted { get; set; }
         public static CardBlacklist Create(CreateCardBlacklistRequest request, Options options)
         {
             return RestHttpClient.Create().Post<CardBlacklist>(options.BaseUrl + "/cardstorage/blacklist/card", GetHttpHeaders(request, options), request);

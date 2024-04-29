@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Text;
 
-namespace Iyzipay
+namespace Iyzicore
 {
-    public sealed class DigestHelper
+    public static class DigestHelper
     {
-        private DigestHelper()
+        public static string DecodeString(string content)
         {
-        }
-
-        public static String DecodeString(String content)
-        {
-            return (!String.IsNullOrEmpty(content)) ? Encoding.UTF8.GetString(Convert.FromBase64String(content)) : null;
+            return !string.IsNullOrEmpty(content) ? Encoding.UTF8.GetString(Convert.FromBase64String(content)) : null;
         }
     }
 }

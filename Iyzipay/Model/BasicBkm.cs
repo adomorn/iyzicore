@@ -1,13 +1,13 @@
-﻿using Iyzipay.Request;
-using System;
+﻿using System;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class BasicBkm : BasicPaymentResource
     {
-        public String Token { get; set; }
-        public String CallbackUrl { get; set; }
-        public String PaymentStatus { get; set; }
+        public string Token { get; set; }
+        public string CallbackUrl { get; set; }
+        public string PaymentStatus { get; set; }
 
         public static BasicBkm Retrieve(RetrieveBkmRequest request, Options options)
         {

@@ -1,7 +1,7 @@
-﻿using Iyzipay.Request;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class PayoutCompletedTransactionList : IyzipayResource
     {

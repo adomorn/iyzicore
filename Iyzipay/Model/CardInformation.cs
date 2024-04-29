@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class CardInformation : RequestStringConvertible
     {
-        public String CardAlias { get; set; }
-        public String CardNumber { get; set; }
-        public String ExpireYear { get; set; }
-        public String ExpireMonth { get; set; }
-        public String CardHolderName { get; set; }
+        public string CardAlias { get; set; }
+        public string CardNumber { get; set; }
+        public string ExpireYear { get; set; }
+        public string ExpireMonth { get; set; }
+        public string CardHolderName { get; set; }
 
         public string ToPKIRequestString()
         {

@@ -1,14 +1,14 @@
 ﻿using System;
-using Iyzipay.Model;
+using Iyzicore.Model;
 
-namespace Iyzipay.Request
+namespace Iyzicore.Request
 {
     public class LoyaltyInquiryRequest : BaseRequest
     {
         public LoyaltyPaymentCard PaymentCard { set; get; }
         public string Currency { set; get; }
 
-        public override String ToPKIRequestString()
+        public override string ToPKIRequestString()
         {
             return ToStringRequestBuilder.NewInstance()
                 .AppendSuper(base.ToPKIRequestString())

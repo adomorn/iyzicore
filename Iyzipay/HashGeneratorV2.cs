@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class HashGeneratorV2
     {
@@ -10,7 +10,7 @@ namespace Iyzipay
         {
         }
 
-        public static String GenerateHash(String apiKey, String secretKey, String randomString, String dataToEncrypt)
+        public static string GenerateHash(string apiKey, string secretKey, string randomString, string dataToEncrypt)
         {
             HashAlgorithm algorithm = new HMACSHA256(Encoding.UTF8.GetBytes(secretKey));
             var computedHash = algorithm.ComputeHash(Encoding.UTF8.GetBytes(dataToEncrypt));

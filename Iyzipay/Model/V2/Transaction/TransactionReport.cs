@@ -1,7 +1,6 @@
-﻿using System;
-using Iyzipay.Request.V2;
+﻿using Iyzicore.Request.V2;
 
-namespace Iyzipay.Model.V2.Transaction
+namespace Iyzicore.Model.V2.Transaction
 {
     public class TransactionReport : TransactionReportResource
     {

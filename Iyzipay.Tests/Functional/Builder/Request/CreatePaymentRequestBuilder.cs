@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using Iyzipay.Model;
-using Iyzipay.Request;
+using Iyzicore;
+using Iyzicore.Model;
+using Iyzicore.Request;
 
 namespace Iyzipay.Tests.Functional.Builder.Request
 {
@@ -9,14 +10,14 @@ namespace Iyzipay.Tests.Functional.Builder.Request
         private string _price = "1";
         private string _paidPrice = "1.1";
         private int _installment = 1;
-        private string _paymentChannel = Model.PaymentChannel.WEB.ToString();
+        private string _paymentChannel = Iyzicore.Model.PaymentChannel.WEB.ToString();
         private string _basketId = "B67832";
         private string _paymentGroup;
         private Buyer _buyer = BuyerBuilder.Create().Build();
         private Address _shippingAddress = AddressBuilder.Create().Build();
         private Address _billingAddress = AddressBuilder.Create().Build();
         private List<BasketItem> _basketItems;
-        private string _currency = Model.Currency.TRY.ToString();
+        private string _currency = Iyzicore.Model.Currency.TRY.ToString();
         private PaymentCard _paymentCard = PaymentCardBuilder.Create().BuildWithCardCredentials().Build();
         private string _paymentSource;
         private string _callbackUrl;
@@ -175,14 +176,14 @@ namespace Iyzipay.Tests.Functional.Builder.Request
         public CreatePaymentRequestBuilder MarketplacePayment(string subMerchantKey)
         {
             _basketItems = BasketItemBuilder.Create().BuildBasketItemsWithSubMerchantKey(subMerchantKey);
-            _paymentGroup = Model.PaymentGroup.PRODUCT.ToString();
+            _paymentGroup = Iyzicore.Model.PaymentGroup.PRODUCT.ToString();
             return this;
         }
 
         public CreatePaymentRequestBuilder StandardListingPayment()
         {
             _basketItems = BasketItemBuilder.Create().BuildDefaultBasketItems();
-            _paymentGroup = Model.PaymentGroup.LISTING.ToString();
+            _paymentGroup = Iyzicore.Model.PaymentGroup.LISTING.ToString();
             return this;
         }
     }

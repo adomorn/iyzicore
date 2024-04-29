@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Iyzipay.Model.V2
+namespace Iyzicore.Model.V2
 {
     public class ResponsePagingData<T> : IyzipayResourceV2
     {

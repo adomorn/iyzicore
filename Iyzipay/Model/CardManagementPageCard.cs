@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Iyzipay.Request;
+using Iyzicore.Request;
 
-namespace Iyzipay.Model
+namespace Iyzicore.Model
 {
     public class CardManagementPageCard : IyzipayResource
     {

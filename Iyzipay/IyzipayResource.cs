@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Iyzipay
+namespace Iyzicore
 {
     public class IyzipayResource
     {
-        private static readonly String AUTHORIZATION = "Authorization";
-        private static readonly String RANDOM_HEADER_NAME = "x-iyzi-rnd";
-        private static readonly String CLIENT_VERSION_HEADER_NAME = "x-iyzi-client-version";
-        private static readonly String IYZIWS_HEADER_NAME = "IYZWS ";
-        private static readonly String COLON = ":";
+        private static readonly string AUTHORIZATION = "Authorization";
+        private static readonly string RANDOM_HEADER_NAME = "x-iyzi-rnd";
+        private static readonly string CLIENT_VERSION_HEADER_NAME = "x-iyzi-client-version";
+        private static readonly string IYZIWS_HEADER_NAME = "IYZWS ";
+        private static readonly string COLON = ":";
 
-        public String Status { get; set; }
-        public String ErrorCode { get; set; }
-        public String ErrorMessage { get; set; }
-        public String ErrorGroup { get; set; }
-        public String Locale { get; set; }
+        public string Status { get; set; }
+        public string ErrorCode { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ErrorGroup { get; set; }
+        public string Locale { get; set; }
         public long SystemTime { get; set; }
-        public String ConversationId { get; set; }
+        public string ConversationId { get; set; }
 
         public IyzipayResource()
         {
