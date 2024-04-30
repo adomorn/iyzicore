@@ -4,12 +4,8 @@ using System.Text;
 
 namespace Iyzicore;
 
-public class HashGeneratorV2
+public static class HashGeneratorV2
 {
-    private HashGeneratorV2()
-    {
-    }
-
     public static string GenerateHash(string apiKey, string secretKey, string randomString, string dataToEncrypt)
     {
         HashAlgorithm algorithm = new HMACSHA256(Encoding.UTF8.GetBytes(secretKey));
